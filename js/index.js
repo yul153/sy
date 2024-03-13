@@ -575,6 +575,21 @@ if (!mainTabActive.length) {
 
   $(".wplMenu>li").click(function () {
     $(this).addClass("active").siblings().removeClass("active");
+
+    let tab2Id1 = $(this).attr("data-imbtn");
+    let tab2Id2 = $(this).attr("data-yobtn");
+    let tab2Id3 = $(this).attr("data-webbtn");
+    let tab2Id4 = $(this).attr("data-thebtn");
+
+    activateTab(tab2Id1);
+    activateTab(tab2Id2);
+    activateTab(tab2Id3);
+    activateTab(tab2Id4);
+
+    function activateTab(tabId) {
+      $(".wplInner>li").removeClass("active");
+      $("#" + tabId).addClass("active").hide().fadeIn();
+    }
   });
 
   /* 웹기획 이미지 */
@@ -616,105 +631,105 @@ if (!mainTabActive.length) {
   wplImgList(".sbtnyo1Left", ".sbtnyo1Right", ".wplyo1Image li", 8);
   wplImgList(".sbtnyo2Left", ".sbtnyo2Right", ".wplyo2Image li", 2);
   wplImgList(".sbtnwt1Left", ".sbtnwt1Right", ".wplwt1Image li", 13); */
-  /*  안씀 let wploldidx = 0;
-    let wplidx = 0;
-  
-    function wplImg1(wplidx) {
-      if(wploldidx!=wplidx){
-        $(".wpl1Image li").eq(wploldidx).stop().fadeOut(100);
-        $(".wpl1Image li").eq(wplidx).stop().fadeIn(100);
-      }; 
-      wploldidx = wplidx;
+  /* let wploldidx = 0;
+  let wplidx = 0;
+
+  function wplImg1(wplidx) {
+    if (wploldidx != wplidx) {
+      $(".wpl1Image>li").eq(wploldidx).stop().fadeOut(100);
+      $(".wpl1Image>li").eq(wplidx).stop().fadeIn(100);
     };
-  
-    $(".s1btnLeft").click(function () {
-      wplidx--;
-      if (wplidx < 0) {
-        wplidx = 14;
-      }
-      wplImg1(wplidx);
-    });
-  
-    $(".s1btnRight").click(function () {
-      wplidx++;
-      if (wplidx > 14) {
-        wplidx = 0;
-      }
-      wplImg1(wplidx);
-    });
-  
-    function wplImg2(wplidx) {
-      if(wploldidx!=wplidx){
-        $(".wpl3Image li").eq(wploldidx).stop().fadeOut(300);
-        $(".wpl3Image li").eq(wplidx).stop().fadeIn(300);
-      }; 
-      wploldidx = wplidx;
+    wploldidx = wplidx;
+  };
+
+  $(".s1btnLeft").click(function () {
+    wplidx--;
+    if (wplidx < 0) {
+      wplidx = 14;
+    }
+    wplImg1(wplidx);
+  });
+
+  $(".s1btnRight").click(function () {
+    wplidx++;
+    if (wplidx > 14) {
+      wplidx = 0;
+    }
+    wplImg1(wplidx);
+  });
+
+  function wplImg2(wplidx) {
+    if (wploldidx != wplidx) {
+      $(".wpl3Image li").eq(wploldidx).stop().fadeOut(300);
+      $(".wpl3Image li").eq(wplidx).stop().fadeIn(300);
     };
-  
-    $(".s3btnLeft").click(function () {
-      wplidx--;
-      if (wplidx < 0) {
-        wplidx = 6;
-      }
-      wplImg2(wplidx);
-    });
-  
-    $(".s3btnRight").click(function () {
-      wplidx++;
-      if (wplidx > 6) {
-        wplidx = 0;
-      }
-      wplImg2(wplidx);
-    });
-  
-    function wplImg3(wplidx) {
-      if(wploldidx!=wplidx){
-        $(".wpl5Image li").eq(wploldidx).stop().fadeOut(300);
-        $(".wpl5Image li").eq(wplidx).stop().fadeIn(300);
-      }; 
-      wploldidx = wplidx;
+    wploldidx = wplidx;
+  };
+
+  $(".s3btnLeft").click(function () {
+    wplidx--;
+    if (wplidx < 0) {
+      wplidx = 6;
+    }
+    wplImg2(wplidx);
+  });
+
+  $(".s3btnRight").click(function () {
+    wplidx++;
+    if (wplidx > 6) {
+      wplidx = 0;
+    }
+    wplImg2(wplidx);
+  });
+
+  function wplImg3(wplidx) {
+    if (wploldidx != wplidx) {
+      $(".wpl5Image li").eq(wploldidx).stop().fadeOut(300);
+      $(".wpl5Image li").eq(wplidx).stop().fadeIn(300);
     };
-  
-    $(".s5btnLeft").click(function () {
-      wplidx--;
-      if (wplidx < 0) {
-        wplidx = 3;
-      }
-      wplImg3(wplidx);
-    });
-  
-    $(".s5btnRight").click(function () {
-      wplidx++;
-      if (wplidx > 3) {
-        wplidx = 0;
-      }
-      wplImg3(wplidx);
-    });
-  
-    function wplImg4(wplidx) {
-      if(wploldidx!=wplidx){
-        $(".wplyo1Image li").eq(wploldidx).stop().fadeOut(300);
-        $(".wplyo1Image li").eq(wplidx).stop().fadeIn(300);
-      }; 
-      wploldidx = wplidx;
+    wploldidx = wplidx;
+  };
+
+  $(".s5btnLeft").click(function () {
+    wplidx--;
+    if (wplidx < 0) {
+      wplidx = 3;
+    }
+    wplImg3(wplidx);
+  });
+
+  $(".s5btnRight").click(function () {
+    wplidx++;
+    if (wplidx > 3) {
+      wplidx = 0;
+    }
+    wplImg3(wplidx);
+  });
+
+  function wplImg4(wplidx) {
+    if (wploldidx != wplidx) {
+      $(".wplyo1Image li").eq(wploldidx).stop().fadeOut(300);
+      $(".wplyo1Image li").eq(wplidx).stop().fadeIn(300);
     };
-  
-    $(".sbtnyo1Left").click(function () {
-      wplidx--;
-      if (wplidx < 0) {
-        wplidx = 7;
-      }
-      wplImg4(wplidx);
-    });
-  
-    $(".sbtnyo1Right").click(function () {
-      wplidx++;
-      if (wplidx > 7) {
-        wplidx = 0;
-      }
-      wplImg4(wplidx);
-    }); */
-  function createImageSlider(sbtnLeft, sbtnRight, wplImage, totalImages) {
+    wploldidx = wplidx;
+  };
+
+  $(".sbtnyo1Left").click(function () {
+    wplidx--;
+    if (wplidx < 0) {
+      wplidx = 7;
+    }
+    wplImg4(wplidx);
+  });
+
+  $(".sbtnyo1Right").click(function () {
+    wplidx++;
+    if (wplidx > 7) {
+      wplidx = 0;
+    }
+    wplImg4(wplidx);
+  }); */
+  /* function createImageSlider(sbtnLeft, sbtnRight, wplImage, totalImages) {
     let wploldidx = 0;
     let wplidx = 0;
 
@@ -747,7 +762,7 @@ if (!mainTabActive.length) {
   createImageSlider(".s5btnLeft", ".s5btnRight", ".wpl5Image li", 4);
   createImageSlider(".sbtnyo1Left", ".sbtnyo1Right", ".wplyo1Image li", 8);
   createImageSlider(".sbtnyo2Left", ".sbtnyo2Right", ".wplyo2Image li", 2);
-  createImageSlider(".sbtnwt1Left", ".sbtnwt1Right", ".wplwt1Image li", 13);
+  createImageSlider(".sbtnwt1Left", ".sbtnwt1Right", ".wplwt1Image li", 13); */
 });
 
 

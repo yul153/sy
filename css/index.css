@@ -3,13 +3,20 @@
 @font-face {
   font-family: 'Pretendard-Regular';
   src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'SBAggroL';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroL.woff') format('woff');
+  font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Montserrat", sans-serif;
-  src: url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap') format('woff');
+  font-family: 'SEBANG_Gothic_Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SEBANG_Gothic_Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 * {
@@ -116,7 +123,7 @@ nav {
 #gnb {
   width: 1050px;
   background-color: #fff;
-  border: 1px solid #00D49E;
+  border: 1px solid #FFCCBC;
   border-radius: 100px;
   padding: 20px 0 20px 70px;
   margin-right: 10px;
@@ -138,7 +145,7 @@ nav {
   top: 0;
   left: 0;
   width: 0;
-  color: #00D49E;
+  color: #FFCCBC;
   overflow: hidden;
   transition: 0.5s;
   cursor: pointer;
@@ -181,7 +188,7 @@ nav {
 }
 
 .hamburger.active>div {
-  background-color: #00D49E;
+  background-color: #FFCCBC;
 }
 
 .hamburger.active>div:first-child {
@@ -209,7 +216,7 @@ nav {
   position: relative;
   width: 100%;
   height: 60%;
-  background-color: #00D49E;
+  background-color: #FFCCBC;
   border-bottom: 2px dashed #333;
 }
 
@@ -238,11 +245,17 @@ nav {
   text-transform: uppercase;
 }
 
+
+
+
+
 /* Section_Profile */
 h2 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 60px;
-  font-weight: 600;
+  font-family: 'SBAggroL';
+  font-size: 52px;
+  font-weight: 300;
+  color: #3E2723;
+  text-align: center;
   text-transform: uppercase;
   letter-spacing: -2px;
   margin: 0 0 10px 10px;
@@ -251,7 +264,7 @@ h2 {
 }
 
 h3 {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 400;
   text-transform: capitalize;
   letter-spacing: -1px;
@@ -279,13 +292,6 @@ h3 {
   margin: 100px 0 0 200px;
 }
 
-.sq {
-  width: 8px;
-  height: 48px;
-  background-color: #00D49E;
-  margin-bottom: 8px;
-}
-
 .proCard {
   width: 500px;
   height: 600px;
@@ -305,13 +311,14 @@ h3 {
   border-style: dashed;
   border-color: #333;
   border-radius: 60px 60px 0 0;
+  background-color: #FFCCBC;
   overflow: hidden;
 }
 
 .proCardImage img {
   width: inherit;
   height: inherit;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .proCard .proCardInfo {
@@ -328,15 +335,16 @@ h3 {
 }
 
 .proCardInfo>h4 {
-  font-size: 28px;
-  font-weight: 600;
+  font-family: 'SBAggroL';
+  font-size: 26px;
+  font-weight: 300;
   margin-bottom: 12px;
 }
 
 .proCardInfo>p {
   font-size: 18px;
   font-weight: 400;
-  color: #444;
+  color: #666;
   margin-bottom: 8px;
 }
 
@@ -345,12 +353,12 @@ h3 {
   left: -150px;
   width: 1500px;
   height: 100vh;
-  background-color: #eee;
+  background-color: #fcf7f0;
   border: 2px dashed #333;
+  padding-top: 40px;
 }
 
 .profileTexts .profileText {
-  /* border: 1px solid #000; */
   width: 100%;
   height: auto;
   padding-left: 200px;
@@ -360,12 +368,11 @@ h3 {
 }
 
 .profileText h3 {
+  font-family: 'SEBANG_Gothic_Regular';
   width: 100%;
   height: 50px;
-  background-color: #fff;
-  border-width: 2px 0 2px 2px;
-  border-style: dashed;
-  border-color: #333;
+  color: #3E2723;
+  background-color: #FFCCBC;
   border-radius: 40px 0 0 40px;
   line-height: 50px;
   padding-left: 40px;
@@ -386,7 +393,7 @@ h3 {
   font-size: 13px;
   font-weight: 300;
   color: #666;
-  margin-left: 40px;
+  margin: 0 0 20px 40px;
 }
 
 .lisense {
@@ -400,7 +407,7 @@ h3 {
 }
 
 .lisense li:last-child {
-  margin-bottom: 0;
+  margin-bottom: 20px;
 }
 
 .skills {
@@ -424,9 +431,9 @@ h3 {
 }
 
 .skillTitle span {
-  font-size: 16px;
-  font-weight: 300;
-  color: #666;
+  font-size: 15px;
+  font-weight: 400;
+  color: #333;
 }
 
 .skill .skillGraph {
@@ -439,7 +446,7 @@ h3 {
 .skillGraph .sGraph {
   width: calc(260 * 0.9px);
   height: inherit;
-  background-color: #00D49E;
+  background-color: #FFCCBC;
   border-radius: 30px 0 0 30px;
   transform-origin: left;
   will-change: transform;
@@ -463,7 +470,7 @@ h3 {
 #webdesign {
   width: 100vw;
   height: 100vh;
-  background-color: #eee;
+  background-color: #FFCCBC;
 }
 
 .webdesignInner {
@@ -473,10 +480,14 @@ h3 {
 
 .webdesignInner .wdTitle {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   padding-top: 50px;
   margin: 0 0 20px 50px;
+}
+
+.wdTitle h2 {
+  color: #3D4770;
 }
 
 .webdesignInner .wdcontents {
@@ -495,20 +506,22 @@ h3 {
 
 .wdTabmenu li {
   width: 50%;
+  font-family: 'SBAggroL';
   text-align: center;
+  background-color: #fcf7f0;
   border: 2px dashed #333;
   border-radius: 40px 40px 0 0;
   cursor: pointer;
 }
 
 .wdTabmenu li.active {
-  color: #00D49E;
-  background-color: #666;
+  color: #FFCCBC;
+  background-color: #3D4770;
   border-color: #fff;
 }
 
 .wdTabmenu li:hover {
-  color: #00D49E;
+  color: #FFCCBC;
 }
 
 
@@ -773,7 +786,7 @@ h3 {
 /* Section_WebPublishing*/
 #webpublishing {
   height: 100vh;
-  background-color: #ddd;
+  background-color: #fcf7f0;
 }
 
 #webpublishing .webpublishingInner {
@@ -782,7 +795,7 @@ h3 {
 
 .webpublishingInner .wpTitle {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   padding: 50px 0 10px 50px;
 }
@@ -880,6 +893,12 @@ h3 {
   color: #666;
 }
 
+.wpText2 .personal {
+  background-color: #FFCCBC;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
 .wpText3 {
   margin-top: 23px;
 }
@@ -891,7 +910,7 @@ h3 {
 
 .wpTextinner>li:first-child>i.xi-check {
   font-size: 16px;
-  color: #00D49E;
+  color: #FFCCBC;
 }
 
 .wpTextinner li:last-child {
@@ -915,7 +934,7 @@ h3 {
   font-weight: 500;
   text-align: center;
   text-transform: capitalize;
-  border: 2px solid #00D49E;
+  border: 2px solid #FFCCBC;
   line-height: 48px;
   border-radius: 4px;
   z-index: 31;
@@ -924,7 +943,7 @@ h3 {
 .wpviewButton li a:hover {
   color: #fff;
   border: 2px solid transparent;
-  background-color: #00D49E;
+  background-color: #FFCCBC;
 }
 
 
@@ -939,22 +958,22 @@ h3 {
 .responsivewebInner .resTitle {
   display: flex;
   align-items: center;
-  padding: 50px 0 10px 50px;
+  padding: 20px 0 20px 50px;
 }
 
 .resContents {
   border: 2px dashed #fff;
   position: relative;
   display: flex;
-  width: 1400px;
-  height: 700px;
+  width: 100%;
+  height: 100vh;
   margin: auto;
   display: flex;
 }
 
 .resTextContents {
   flex: 1;
-  background-color: #eee;
+  background-color: #fcf7f0;
   border-right: 2px dashed #333;
 }
 
@@ -1001,7 +1020,7 @@ h3 {
 .resTextList .resText .resPe {
   display: inline-block;
   color: #333;
-  background-color: #00D49E;
+  background-color: #FFCCBC;
   border-radius: 4px;
   padding: 5px 8px;
   animation: pe 1s infinite linear alternate;
@@ -1025,7 +1044,7 @@ h3 {
 
 .resBtnInner>li:first-child>i.xi-check {
   font-size: 16px;
-  color: #00D49E;
+  color: #FFCCBC;
 }
 
 .resBtnInner li:last-child {
@@ -1052,7 +1071,7 @@ h3 {
   font-size: 18px;
   font-weight: 500;
   text-align: center;
-  border: 2px solid #00D49E;
+  border: 2px solid #FFCCBC;
   line-height: 48px;
   border-radius: 4px;
 }
@@ -1075,7 +1094,7 @@ h3 {
 .resViewBtn li a:hover {
   color: #fff;
   border: 2px solid transparent;
-  background-color: #00D49E;
+  background-color: #FFCCBC;
 }
 
 
@@ -1108,7 +1127,7 @@ h3 {
   width: 400px;
   height: 470px;
   background: url(../img/responsiveweb/mockup_iPad.png);
-  background-size: cover;
+  background-size: contain;
   transition: all 0.7s;
   z-index: 51;
 }
@@ -1120,7 +1139,7 @@ h3 {
   width: 152px;
   height: 280px;
   background: url(../img/responsiveweb/mockup_iphone.png);
-  background-size: cover;
+  background-size: contain;
   background-position: center top;
   transition: all 0.7s;
   z-index: 52;
@@ -1174,7 +1193,7 @@ h3 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   overflow: auto;
   z-index: 9999;
   display: none;
@@ -1186,30 +1205,36 @@ h3 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 800px;
+  width: 792px;
   height: 875px;
-  background: url(../img/responsiveweb/viewpage_responsive_tablet.png) no-repeat center center;
+  background: url(../img/responsiveweb/mockup_pop_iPad.png) no-repeat center center;
 }
 
-.restbl iframe {
-  margin: 47px 0 0 17px;
+.restbl>iframe {
+  width: 768px;
+  height: 852px;
+  margin: 12px 0 0 14px;
   border: none;
+  border-radius: 32px;
 }
 
 /* 모바일용 */
 .resmobi {
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 425px;
-  height: 727px;
-  background: url(../img/responsiveweb/viewpage_responsive_mobile.png) no-repeat center center;
+  width: 408px;
+  height: 730px;
+  background: url(../img/responsiveweb/mockup_pop_iphone.png) no-repeat center center;
 }
 
-.restbl iframe {
-  margin: 67px 0 0 25px;
+.resmobi>iframe {
+  width: 375px;
+  height: 700px;
+  margin: 16px 0 0 19px;
   border: none;
+  border-radius: 44px;
 }
 
 /* 닫기 */
@@ -1263,7 +1288,7 @@ h3 {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin: 50px 0 0 50px;
+  margin: 20px 0 0 50px;
 }
 
 .wplcontentTitle {
@@ -1271,7 +1296,7 @@ h3 {
   font-weight: 500;
   text-align: center;
   text-transform: uppercase;
-  margin: 0 0 20px 80px;
+  margin: 0 0 10px 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1294,37 +1319,30 @@ h3 {
 
 .wplcontents {
   position: relative;
-  width: 1000px;
+  width: 1380px;
   height: 700px;
-  margin: 20px auto 0;
+  margin: 30px auto 0;
 }
 
 .wplcontents .wplcontentList {
+  border: 1px solid #000;
   width: inherit;
   height: inherit;
-  border: 2px dashed #333;
-  border-radius: 40px;
-  overflow: hidden;
-}
-
-.wplcontent {
-  display: none;
-}
-
-.wplcontent.active {
-  display: block;
 }
 
 .wplcontent {
   width: inherit;
   height: inherit;
   margin: auto;
+  display: flex;
+  opacity: 0;
+}
+
+.wplcontent.active {
+  opacity: 1;
 }
 
 .wplcontent .wplMenu {
-  position: absolute;
-  top: 40px;
-  right: 100%;
   width: 150px;
   height: auto;
 }
@@ -1357,15 +1375,20 @@ h3 {
 }
 
 .wplInner {
-  width: inherit;
+  width: 1250px;
   height: 700px;
+  border: 2px dashed #333;
   overflow: hidden;
 }
 
-.wplInnerContent {
-  position: relative;
-  width: 1000px;
+.wplInner .wplInnerContent {
+  width: 1200px;
   height: 700px;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: pink;
   display: none;
 }
 
@@ -1373,56 +1396,60 @@ h3 {
   display: block;
 }
 
-.wplButton {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  padding: 0 10px 0 5px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 9000;
+#imbtn1 {
+  background-image: url(../img/webplanning/imstudio/imstudio_storyboard/imstudio_storyboard.png);
 }
 
-.wplButton>li {
-  width: 40px;
-  height: 40px;
-  font-size: 36px;
-  text-align: center;
-  line-height: 40px;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  cursor: pointer;
+
+
+
+
+.wplInnerContent::-webkit-scrollbar {
+  width: 20px;
+  height: 20px;
+  background-color: linear-gradient(to bottom, red, orange);
+  border-radius: 12px;
 }
 
-.wplImage {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+.wplInnerContent::-webkit-scrollbar-corner {
+  background-color: blue;
 }
 
-.wplImage>li {
-  position: absolute;
-  display: none;
+/* 스크롤 움직이는 바 */
+.wplInnerContent::-webkit-scrollbar-thumb {
+  background-color: aqua;
+  border-radius: 12px;
 }
 
-.wplImage>li:first-child {
-  display: block;
+/* 밑화살표 */
+.wplInnerContent::-webkit-scrollbar-button:vertical:increment {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: black;
 }
 
-.wplImage>li img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+/* 위화살표 */
+.wplInnerContent::-webkit-scrollbar-button:vertical:decrement {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: black;
 }
 
-#imbtn2 {
+
+
+
+
+
+
+
+
+
+
+
+
+/* #imbtn2 {
   z-index: 9999;
 }
 
@@ -1497,7 +1524,7 @@ h3 {
   text-transform: capitalize;
   line-height: 50px;
   background-color: #666;
-  border: 1px solid #00D49E;
+  border: 1px solid #FFCCBC;
   border-radius: 8px;
   cursor: pointer;
   z-index: 30;
@@ -1511,7 +1538,7 @@ h3 {
 
 .imbtn6Btn:hover {
   color: #fff;
-  background-color: #00D49E;
+  background-color: #FFCCBC;
   border: 0;
 }
 
@@ -1525,4 +1552,4 @@ h3 {
   width: 100%;
   height: auto;
   object-fit: cover;
-}
+} */

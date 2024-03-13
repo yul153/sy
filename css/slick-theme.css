@@ -88,7 +88,7 @@
     content: '\e93b';
     font-family: xeicon;
     font-size: 50px;
-    color: #333;
+    color: #3E2723;
 
 }
 
@@ -109,7 +109,7 @@
     content: '\e93e';
     font-family: xeicon;
     font-size: 50px;
-    color: #333;
+    color: #3E2723;
 }
 
 [dir='rtl'] .slick-next:before {
