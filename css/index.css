@@ -58,7 +58,7 @@ img {
 .wrap {
   width: 100%;
   font-family: 'Pretendard';
-  color: #111;
+  color: #333;
   background-color: #f6f5f2;
   background-image: url(../img/papertexture.jpg);
   background-blend-mode: overlay;
@@ -168,7 +168,7 @@ nav {
   position: absolute;
   width: inherit;
   height: 3px;
-  background-color: #111;
+  background-color: #333;
   border-radius: 30px;
   transition: 0.5s;
 }
@@ -802,31 +802,55 @@ h3 {
 
 .wpContentsList .wpContents {
   width: 1400px;
-  height: 680px;
+  height: 700px;
   margin: 0 auto;
 }
 
 .wpContents .wpContent {
   width: 1400px;
-  height: 530px;
+  height: 550px;
   overflow-y: auto;
-  background-position: 0 0;
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  transition: background-position 15s;
+  overflow-x: hidden;
 }
 
-.wpContentbong {
-  background-image: url(../img/webpublishing/viewpage_onepage.png);
+.wpContent>img {
+  width: calc(1400px - 12px);
+  height: auto;
+  object-fit: cover;
+  object-position: top;
 }
 
-.wpContentseed {
-  background-image: url(../img/webpublishing/viewpage_category.png);
+.wpContent::-webkit-scrollbar {
+  width: 12px;
 }
 
-.wpContentim {
-  background-image: url(../img/webpublishing/viewpage_allpage.jpg);
+/* 스크롤 움직이는 바 */
+.wpContent::-webkit-scrollbar-thumb {
+  height: 25%;
+  background-color: #3D4770;
+  border-radius: 10px;
 }
+
+/* 스크롤바 뒷배경 */
+.wpContent::-webkit-scrollbar-track {
+  background-color: rgba(181, 198, 222, 0.2);
+}
+
+/* 밑화살표 */
+/* .wpContent::-webkit-scrollbar-button:vertical:increment {
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  background-color: black;
+} */
+
+/* 위화살표 */
+/* .wpContent::-webkit-scrollbar-button:vertical:decrement {
+  width: 14px;
+  height: 14px;
+  background-color: #3D4770;
+} */
+
 
 .wpContents .wpConTextList {
   width: inherit;
@@ -896,7 +920,7 @@ h3 {
 .wpText2 .personal {
   background-color: #FFCCBC;
   padding: 4px 12px;
-  border-radius: 20px;
+  border-radius: 4px;
 }
 
 .wpText3 {
@@ -955,12 +979,6 @@ h3 {
   background-color: #666;
 }
 
-.responsivewebInner .resTitle {
-  display: flex;
-  align-items: center;
-  padding: 20px 0 20px 50px;
-}
-
 .resContents {
   border: 2px dashed #fff;
   position: relative;
@@ -972,47 +990,72 @@ h3 {
 }
 
 .resTextContents {
-  flex: 1;
+  flex: 1.2;
   background-color: #fcf7f0;
   border-right: 2px dashed #333;
 }
 
-.resTextTitle {
-  padding: 60px 30px 40px 30px;
-  text-align: center;
+.resTextContents .resTitle {
+  position: relative;
+  top: 50px;
+  left: 154px;
 }
 
-.resTextTitle li h5 {
-  font-size: 34px;
-  font-weight: 800;
+.resTitle h2 {
+  color: #3D4770;
+  margin-bottom: 100px;
+}
+
+.resTitle h2 span {
+  color: #FFCCBC;
+}
+
+.resTextTitle {
+  text-align: center;
+  line-height: 50px;
+}
+
+.resTextTitle li:first-child {
+  font-size: 48px;
+  font-weight: 700;
+  color: #333;
+  letter-spacing: -1px;
   text-transform: uppercase;
 }
 
-.resTextTitle li h6 {
-  font-size: 24px;
-  font-weight: 600;
+.resTextTitle li:nth-child(2) {
+  font-size: 20px;
+  font-weight: 00;
   text-transform: capitalize;
   color: #666;
+  margin-bottom: 30px;
 }
 
 .resTextList {
   width: 400px;
-  height: 500px;
-  padding: 0 0 30px 30px;
+  margin: auto;
 }
 
 .resTextList .resText {
-  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-.resTextList .resText p:first-child {
-  font-size: 18px;
+.resText p:first-child {
+  width: 100px;
+  font-size: 16px;
   font-weight: 600;
-  margin-bottom: 6px;
+  text-align: center;
+  color: #fff;
+  background-color: #3D4770;
+  border-radius: 4px;
+  padding: 6px 4px;
+  margin-right: 10px;
 }
 
 .resText p:last-child {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   color: #666;
 }
@@ -1023,20 +1066,24 @@ h3 {
   background-color: #FFCCBC;
   border-radius: 4px;
   padding: 5px 8px;
-  animation: pe 1s infinite linear alternate;
+  /* animation: pe 1s infinite alternate; */
 }
 
-@keyframes pe {
+/* @keyframes pe {
   0% {
-    opacity: 0.7;
+    opacity: 0.5;
   }
 
   100% {
     opacity: 1;
   }
-}
+} */
 
 /* 버튼 */
+.resTextBtn {
+  width: 100%;
+}
+
 .resBtnInner {
   display: flex;
   margin: 40px 0 10px 0;
@@ -1061,12 +1108,11 @@ h3 {
 
 .resViewBtn li {
   display: flex;
-
 }
 
 .resViewBtn li a {
   display: block;
-  width: 160px;
+  width: 194px;
   height: 50px;
   font-size: 18px;
   font-weight: 500;
@@ -1081,11 +1127,11 @@ h3 {
 }
 
 .resViewBtn .resPCBtn>a {
-  width: 330px;
+  width: 400px;
 }
 
 .resViewBtn .resTMview {
-  width: 330px;
+  width: 400px;
   height: 50px;
   display: flex;
   gap: 10px;
@@ -1103,7 +1149,7 @@ h3 {
 .resContents .resDeviceList {
   width: 1000px;
   height: 100%;
-  background-color: #ff9191;
+  background-color: #FFCCBC;
   flex: 3;
 }
 

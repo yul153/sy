@@ -142,9 +142,16 @@ $(document).ready(function () {
       $(".mainIndicator>div").eq(a).addClass("active");
       $(".mainIndicator>div").eq(a).siblings().removeClass("active");
       $("html,body").stop().animate({ scrollTop: wh * a }, 500);
-
     }
   });
+
+  $(".wpContent").on("mouseenter DOMMouseScroll", function (e, delta) {
+    wheel = false;
+  });
+  $(".wpContent").on("mouseleave DOMMouseScroll", function (e, delta) {
+    wheel = true;
+  });
+
 
   /*스크롤이벤트______________________ */
   $(window).scroll(function () {
@@ -455,14 +462,15 @@ $(document).ready(function () {
     arrows: true,
     speed: 500,
   });
+  // $('.wpContentsList').animate({ scrollTop: 0 }, 500);
 
-  $(".wpContent").mouseenter(function () {
-    $(this).css("backgroundPosition", "0 100%");
-  });
-
-  $(".wpContent").mouseleave(function () {
-    $(this).css("backgroundPosition", "0 0");
-  });
+  /*   $(".wpContent").mouseenter(function () {
+      $(this).css("backgroundPosition", "0 100%");
+    });
+  
+    $(".wpContent").mouseleave(function () {
+      $(this).css("backgroundPosition", "0 0");
+    }); */
 
   /* Responsive Web____________________________________ */
   $(".up").mouseenter(function () {
