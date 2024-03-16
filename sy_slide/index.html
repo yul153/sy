@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>박소율-포트폴리오</title>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"><!-- xicon -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+  <!-- xicon -->
   <link rel="stylesheet" href="css/ScrollTrigger.css"> <!-- Data Scroll PlugIn(스크롤 내릴 때 컨텐츠 움직이기) -->
   <link rel="stylesheet" type="text/css" href="css/slick.css"/>
   <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
@@ -42,9 +43,46 @@
 
     <div id="container">
       <section id="home" class="area">
-        <div>
-          <h1>portfolio</h1>
-          <p>park so yul</p>
+        <div class="homeInner">
+          <div class="home_img">
+            <img src="./img/webdesign/2D_thumbnail_castle2.jpg" alt="">
+          </div>
+          <div class="home_bottom">
+            <ul class="home_menu">
+              <li>
+                <span>01</span>
+                <a href="#profile">profile</a>
+                <!-- <i class="xi-long-arrow-right"></i> -->
+              </li>
+              <li>
+                <span>02</span>
+                <a href="#webdesign">web design</a>
+              </li>
+              <li>
+                <span>03</span>
+                <a href="#webpublishing">web publishing</a>
+              </li>
+              <li>
+                <span>04</span>
+                <a href="#responsiveweb">responsive web</a>
+              </li>
+              <li>
+                <span>05</span>
+                <a href="#webplanning">web planning</a>
+              </li>
+            </ul>
+            <ul class="home_btn">
+              <li>01</li>
+              <li><i class="homeBtn xi-angle-left"></i></li>
+              <li class="home_rod"><div></div></li>
+              <li><i class="homeBtn xi-angle-right"></i></li>
+              <li>04</li>
+              <li class="home_play">
+                <i class="homePlay xi-play"></i>
+                <i class="homePause xi-pause"></i>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -55,12 +93,14 @@
             <div class="proTitle">
               <h2 data-scroll="toggle(.fromLeftIn, .fromLeftOut) addHeight">about</h2>
             </div>
-            <div class="proCard" data-scroll="toggle(.fromBottomIn, .fromBottomOut) addHeight">
-              <div class="proCardImage"><img src="img/profile/me.png" alt="profile image"></div>
+            <div class="proCard">
+              <div class="proCardImage">
+                <img src="img/profile/me.png" alt="profile image">
+              </div>
               <div class="proCardInfo">
-                <h4>박소율 Park Soyul</h4>
+                <h4>박소율 <span>park soyul</span></h4>
                 <p>1988.09.21</p>
-                <p>010 3852 0800</p>
+                <p>010-3852-0800</p>
                 <p>kyu1089@naver.com</p>
               </div>
             </div>
@@ -68,12 +108,10 @@
 
           <div class="profileTexts">
             <div class="profileText">
-              <div class="education">
-                <h3>education</h3>
-              </div>
+              <h3>education</h3>
               <div class="profileTextInner">
                 <p>UIUX웹디자인 with 피그마(figma) 4개월 과정 수료</p>
-                <p>2023.10.30 - 2024.03.08</p>
+                <p>2023.10 - 2024.03</p>
               </div>
               <div  class="profileTextInner">
                 <p>구미대학교 디지털컨텐츠학과 졸업 </p>
