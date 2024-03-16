@@ -151,6 +151,13 @@ $(document).ready(function () {
   $(".wpContent").on("mouseleave DOMMouseScroll", function (e, delta) {
     wheel = true;
   });
+  $(".wplInner").on("mouseenter DOMMouseScroll", function (e, delta) {
+    wheel = false;
+  });
+  $(".wplInner").on("mouseleave DOMMouseScroll", function (e, delta) {
+    wheel = true;
+  });
+
 
 
   /*스크롤이벤트______________________ */
@@ -571,33 +578,42 @@ if (!mainTabActive.length) {
 }
  */
 
-  $(".wplcontentTitle>li").click(function () {
+  /* $(".wplcontentTitle>li").click(function () {
     $(this).addClass("active").siblings().removeClass("active");
 
     let tabId1 = $(this).attr("data-wpl");
-    $(".wplcontentList>li").removeClass("active");
-    $("#" + tabId1).addClass("active").hide().fadeIn();
+    $("#" + tabId1).addClass("active").fadeIn().siblings().removeClass("active");
 
     $("#" + tabId1 + " .wplMenu>li:first-child").click();
   });
 
-  $(".wplMenu>li").click(function () {
+  $("#wpl1").click(function () {
     $(this).addClass("active").siblings().removeClass("active");
 
     let tab2Id1 = $(this).attr("data-imbtn");
-    let tab2Id2 = $(this).attr("data-yobtn");
-    let tab2Id3 = $(this).attr("data-webbtn");
-    let tab2Id4 = $(this).attr("data-thebtn");
+    $("#" + tab2Id1).addClass("active").fadeIn().siblings().removeClass("active");
+  }); */
 
-    activateTab(tab2Id1);
-    activateTab(tab2Id2);
-    activateTab(tab2Id3);
-    activateTab(tab2Id4);
+  // $(".wplcontent.active").find(".wplMenu li.active").trigger("click");
 
-    function activateTab(tabId) {
-      $(".wplInner>li").removeClass("active");
-      $("#" + tabId).addClass("active").hide().fadeIn();
-    }
+  $(".wplcontentTitle>li").click(function () {
+    $(this).addClass("active").siblings().removeClass("active");
+
+    var tabId1 = $(this).attr('data-wpl');
+    $(this).addClass('active').siblings().removeClass('active');
+    $("#" + tabId1).addClass('active').siblings().removeClass('active');
+
+    // $("#" + tabId1 + " .wplMenu>li:first-child").click();
+  });
+
+  // 탭 메뉴 클릭 이벤트 처리
+  $(".wplMenu li").click(function () {
+    $(this).addClass("active").siblings().removeClass("active");
+
+    var tab_id = $(this).attr('data-imbtn') || $(this).attr('data-yobtn') || $(this).attr('data-webbtn') || $(this).attr('data-thebtn');
+    // 해당 탭을 활성화하고 다른 탭은 비활성화합니다.
+    $(this).addClass('active').siblings().removeClass('active');
+    $("#" + tab_id).addClass('active').siblings().removeClass('active');
   });
 
   /* 웹기획 이미지 */

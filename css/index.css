@@ -54,24 +54,17 @@ img {
   display: block;
   clear: both;
 }
-body{
-  width: 100%;
-  height: 100%;
-  background-color: #f6f5f2;
-}
+
 .wrap {
   width: 100%;
   height: 100%;
-  font-family: 'Pretendard';
   color: #333;
+  font-family: 'Pretendard';
   vertical-align: top;
-  background:repeating-linear-gradient(to bottom, transparent 40px, #ffd2e1 40px); 
-/*   background: 
-  linear-gradient(to bottom, transparent 40px, #ddd 40px) 0 0 / 100vw 40px repeat-y,
-  linear-gradient(to right, transparent 40px, #ddd 40px) 0 0 / 100vh 40px repeat-x; */
-  /* background-color: #f6f5f2; */
-/*   background-image: url(../img/papertexture.jpg);
-  background-blend-mode: overlay; */
+  background-color: #f6f5f2;
+  background:
+    repeating-linear-gradient(to right, #ddd, #ddd 3px, transparent 3px, transparent 60px),
+    repeating-linear-gradient(to bottom, #ddd, #ddd 3px, transparent 3px, transparent 60px);
 }
 
 /* Indicator */
@@ -283,6 +276,7 @@ h3 {
 #profile {
   width: 100vw;
   height: 100vh;
+  /* background-color: #fcf7f0; */
 }
 
 .profileInner {
@@ -846,22 +840,6 @@ h3 {
   background-color: rgba(181, 198, 222, 0.2);
 }
 
-/* 밑화살표 */
-/* .wpContent::-webkit-scrollbar-button:vertical:increment {
-  width: 16px;
-  height: 16px;
-  border-radius: 100%;
-  background-color: black;
-} */
-
-/* 위화살표 */
-/* .wpContent::-webkit-scrollbar-button:vertical:decrement {
-  width: 14px;
-  height: 14px;
-  background-color: #3D4770;
-} */
-
-
 .wpContents .wpConTextList {
   width: inherit;
   height: 150px;
@@ -1042,7 +1020,7 @@ h3 {
 }
 
 .resTextList {
-  width: 400px;
+  width: 420px;
   margin: auto;
 }
 
@@ -1076,18 +1054,8 @@ h3 {
   background-color: #FFCCBC;
   border-radius: 4px;
   padding: 5px 8px;
-  /* animation: pe 1s infinite alternate; */
 }
 
-/* @keyframes pe {
-  0% {
-    opacity: 0.5;
-  }
-
-  100% {
-    opacity: 1;
-  }
-} */
 
 /* 버튼 */
 .resTextBtn {
@@ -1165,10 +1133,10 @@ h3 {
 
 .resDeviceList .pcDevice {
   position: absolute;
-  top: 40px;
-  right: -40px;
-  width: 820px;
-  height: 615px;
+  top: 200px;
+  right: 200px;
+  width: 620px;
+  height: 525px;
   background: url(../img/responsiveweb/mockup_iMac.png) no-repeat;
   background-size: cover;
   background-position: center top;
@@ -1178,11 +1146,11 @@ h3 {
 
 .resDeviceList .tabletDevice {
   position: absolute;
-  top: 120px;
-  left: 530px;
-  width: 400px;
+  top: 290px;
+  right: 630px;
+  width: 484px;
   height: 470px;
-  background: url(../img/responsiveweb/mockup_iPad.png);
+  background: url(../img/responsiveweb/mockup_iPad.png) no-repeat;
   background-size: contain;
   transition: all 0.7s;
   z-index: 51;
@@ -1190,11 +1158,11 @@ h3 {
 
 .resDeviceList .mobileDevice {
   position: absolute;
-  top: 305px;
-  left: 500px;
+  bottom: 155px;
+  left: 730px;
   width: 152px;
   height: 280px;
-  background: url(../img/responsiveweb/mockup_iphone.png);
+  background: url(../img/responsiveweb/mockup_iphone.png) no-repeat;
   background-size: contain;
   background-position: center top;
   transition: all 0.7s;
@@ -1203,10 +1171,10 @@ h3 {
 
 .resDeviceList .pcDevice .resPcImg {
   position: absolute;
-  top: 99px;
-  left: 168px;
-  width: 483px;
-  height: 271px;
+  top: 18px;
+  left: 19px;
+  width: 589px;
+  height: 332px;
   background: url(../img/responsiveweb/viewpage_responsive_pc.png) no-repeat 0 0;
   background-size: 100% auto;
   overflow: hidden;
@@ -1344,7 +1312,7 @@ h3 {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin: 20px 0 0 50px;
+  margin: 30px 0 0 50px;
 }
 
 .wplcontentTitle {
@@ -1352,7 +1320,7 @@ h3 {
   font-weight: 500;
   text-align: center;
   text-transform: uppercase;
-  margin: 0 0 10px 80px;
+  margin: 0 0 20px 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1360,6 +1328,7 @@ h3 {
 }
 
 .wplcontentTitle>li {
+  background-color: #fff;
   padding: 10px 20px;
   border: 2px dashed #333;
   border-radius: 12px;
@@ -1368,7 +1337,7 @@ h3 {
 
 .wplcontentTitle>li.active {
   color: #fff;
-  background-color: #666;
+  background-color: #3D4770;
   border-color: #fff;
 }
 
@@ -1377,16 +1346,16 @@ h3 {
   position: relative;
   width: 1380px;
   height: 700px;
-  margin: 30px auto 0;
+  margin: 0 auto;
 }
 
 .wplcontents .wplcontentList {
-  border: 1px solid #000;
   width: inherit;
   height: inherit;
 }
 
 .wplcontent {
+  /* position: absolute; */
   width: inherit;
   height: inherit;
   margin: auto;
@@ -1409,6 +1378,7 @@ h3 {
   text-align: center;
   text-transform: capitalize;
   line-height: 55px;
+  background-color: #fff;
   border-width: 2px 0 2px 2px;
   border-style: dashed;
   border-color: #333;
@@ -1419,32 +1389,29 @@ h3 {
 
 .wplMenu>li.active {
   color: #fff;
-  background-color: #666;
+  background-color: #3D4770;
   border-color: #fff;
 }
 
 .wplcontentTitle>li:hover,
 .wplMenu>li:hover {
-  color: #fff;
-  background-color: #666;
-  border-color: #fff;
+  color: #3D4770;
+  background-color: #FFCCBC;
 }
 
 .wplInner {
-  width: 1250px;
+  width: 1230px;
   height: 700px;
   border: 2px dashed #333;
   overflow: hidden;
 }
 
 .wplInner .wplInnerContent {
-  width: 1200px;
+  width: 1230px;
   height: 700px;
   background-size: 100% auto;
   background-repeat: no-repeat;
   overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: pink;
   display: none;
 }
 
@@ -1452,103 +1419,23 @@ h3 {
   display: block;
 }
 
-#imbtn1 {
-  background-image: url(../img/webplanning/imstudio/imstudio_storyboard/imstudio_storyboard.png);
+.wplInnerContent img {
+  width: 100%;
+  object-fit: cover;
 }
-
-
-
-
 
 .wplInnerContent::-webkit-scrollbar {
-  width: 20px;
-  height: 20px;
-  background-color: linear-gradient(to bottom, red, orange);
-  border-radius: 12px;
-}
-
-.wplInnerContent::-webkit-scrollbar-corner {
-  background-color: blue;
+  width: 12px;
+  background-color: #eee;
 }
 
 /* 스크롤 움직이는 바 */
 .wplInnerContent::-webkit-scrollbar-thumb {
-  background-color: aqua;
+  height: 10%;
+  background-color: #FFCCBC;
   border-radius: 12px;
 }
 
-/* 밑화살표 */
-.wplInnerContent::-webkit-scrollbar-button:vertical:increment {
-  width: 20px;
-  height: 20px;
-  border-radius: 100%;
-  background-color: black;
-}
-
-/* 위화살표 */
-.wplInnerContent::-webkit-scrollbar-button:vertical:decrement {
-  width: 20px;
-  height: 20px;
-  border-radius: 100%;
-  background-color: black;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* #imbtn2 {
-  z-index: 9999;
-}
-
-#imbtn2 ul li img {
-  cursor: pointer;
-  z-index: 9999;
-}
-
-.imbtnPop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7);
-  overflow: auto;
-  z-index: 9999;
-}
-
-.imbtnPop .imbtnPopImg {
-  width: 1200px;
-  height: auto;
-  background-color: #fff;
-  margin: 0 auto;
-  z-index: 9999;
-}
-
-.imbtnPopImg img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  z-index: 9999;
-}
-
-.imbtnclose {
-  position: relative;
-  top: 30px;
-  right: 30px;
-  font-size: 36px;
-  color: #fff;
-  background-color: #ccc;
-  z-index: 9999;
-}
 
 #imbtn6 {
   position: relative;
@@ -1608,4 +1495,4 @@ h3 {
   width: 100%;
   height: auto;
   object-fit: cover;
-} */
+}
