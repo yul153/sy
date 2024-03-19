@@ -188,34 +188,40 @@ $(document).ready(function () {
     if (sc >= wh * 5) {
       a = 5;
     };
+
+    if (sc < 800) {
+      $("header").addClass('active');
+    } else {
+      $("header").removeClass('active');
+    };
+    /*     if (sc < 800 && $(window).scrollTop() == $(document).height() - $(window).height()) {
+          $("header").addClass('active');
+        } else {
+          $("header").removeClass('active');
+        }; */
   });
 
 
 
-  /* Main____________________________________ */
-  let $himage = $(".home_view>img");
+  /* Home____________________________________ */
+  let $himage = $(".home_view_img");
   let $htext = $(".home_text");
   let $hlbtn = $(".home_left_btn");
   let $hrbtn = $(".home_right_btn");
-  let $hBtnTxt;
+  let hBtnTxt;
   let oldImage = 0;
   let newImage = 0;
   let oldText = 0;
   let newText = 0;
   let count = $himage.length;
 
-  $hBtnTxt = newImage;
-  function pageNum() {
-    $(".home_btn_txt>span").text($hBtnTxt + 1);
-  }
-
   //이미지 전환효과 함수
   function changeImage(newImage) {
     if (oldImage != newImage) {
       $himage.eq(oldImage).removeClass("himgVisible");
       $himage.eq(newImage).addClass("himgVisible");
-      $(".home_view img").eq(oldImage).stop().fadeOut(500);
-      $(".home_view img").eq(newImage).stop().fadeIn(500);
+      $himage.eq(oldImage).siblings(".home_rod").find(".home_rod_ani").removeClass("hr_ani");
+      $himage.eq(newImage).siblings(".home_rod").find(".home_rod_ani").addClass("hr_ani");
     }
     oldImage = newImage;
   };
@@ -236,7 +242,7 @@ $(document).ready(function () {
       newImage = 0;
     }
     changeImage(newImage);
-    $hBtnTxt = newImage;
+    hBtnTxt = newImage;
     pageNum();
   };
   //자동함수-텍스트
@@ -269,7 +275,7 @@ $(document).ready(function () {
       newText = count - 1;
     }
     changeText(newText);
-    $hBtnTxt = newImage;
+    hBtnTxt = newImage;
     pageNum();
 
     timer1 = setInterval(autoHimage, 4000);
@@ -293,31 +299,40 @@ $(document).ready(function () {
       newText = 0;
     }
     changeText(newText);
-    $hBtnTxt = newImage;
+    hBtnTxt = newImage;
     pageNum();
 
     timer1 = setInterval(autoHimage, 4000);
     timer2 = setInterval(autoHtext, 4000);
   });
 
+  //페이지 번호 표시 함수
+  function pageNum() {
+    $(".home_btn_txt>span").text(hBtnTxt + 1);
+  };
+
+  //정지재생버튼
   $(".home_play").hide();
-  //정지버튼
+
   $(".home_pause").click(function () {
     clearInterval(timer1);
     clearInterval(timer2);
-    $himage.eq(newImage).find(".home_rod_ani").removeClass("hr_ani");
+    $himage.eq(newImage).siblings(".home_rod").find(".home_rod_ani").removeClass("hr_ani");
     $(".home_pause").hide();
     $(".home_play").show();
   });
+
+  //재생막대
+  $himage.eq(newImage).siblings(".home_rod").find(".home_rod_ani").addClass("hr_ani");
+
   //재생버튼
   $(".home_play").click(function () {
     timer1 = setInterval(autoHimage, 4000);
     timer2 = setInterval(autoHtext, 4000);
-    $himage.eq(newImage).find(".home_rod_ani").addClass("hr_ani");
+    $himage.eq(newImage).siblings(".home_rod").find(".home_rod_ani").addClass("hr_ani");
     $(".home_play").hide();
     $(".home_pause").show();
   });
-
 
 
   /* Header____________________________________ */
@@ -327,6 +342,9 @@ $(document).ready(function () {
       $("#gnb").stop(true, true).animate({ width: 'toggle' }, 300);
     });
    */
+
+
+
 
   /* Profile____________________________________ */
   // 프로필 스킬그래프 순차 재생(API)

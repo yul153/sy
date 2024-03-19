@@ -17,15 +17,15 @@
   <div class="wrap">
 
     <div class="mainIndicator">
-      <div class="indent active">01</div>
-      <div class="indent">02</div>
-      <div class="indent">03</div>
-      <div class="indent">04</div>
-      <div class="indent">05</div>
-      <div class="indent">06</div>
+      <div class="mi1 active"><span>home</span></div>
+      <div class="mi2"><span>profile</span></div>
+      <div class="mi3"><span>web design</span></div>
+      <div class="mi4"><span>web publishing</span></div>
+      <div class="mi5"><span>responsive web</span></div>
+      <div class="mi6"><span>web planning</span></div>
     </div>
 
-    <header>
+    <header class="active">
       <nav>
         <ul id="gnb">
           <li data-text="Home"><a href="#home">Home</a></li>
@@ -35,24 +35,71 @@
           <li data-text="Responsive&nbsp;Web"><a href="#responsiveweb">Responsive&nbsp;Web</a></li>
           <li data-text="Web&nbsp;Planning"><a href="#webplanning">Web&nbsp;Planning</a></li>
         </ul>
-        <div class="hamburger">
+<!--         <div class="hamburger">
           <div></div>
           <div></div>
           <div></div>
-        </div>
+        </div> -->
       </nav>
     </header>
 
     <div id="container">
       <section id="home" class="area">
         <div class="home_inner">
-          <div class="home_view">
-            <img src="./img/home/home_imstudio1.png" alt="" class="himgVisible">
-            <img src="./img/home/home_cardbanner.png" alt="">
-            <img src="./img/home/home_bong2.png" alt="">
-            <img src="./img/home/home_responsive1.png" alt="">
-
+          <div class="home_view_list">
+            <ul class="home_view">
+              <li class="home_view_img himgVisible">
+                <img src="./img/home/home_imstudio1.png" alt="">
+              </li>
+              <li class="home_text htxtVisible">
+                <p>imstudio</p>
+                <p>pc 웹 퍼블리싱 | 전체페이지</p>
+              </li>
+              <li class="home_rod">
+                <div class="home_rod_ani hr_ani"></div>
+              </li>  
+            </ul>
+  
+            <ul class="home_view">
+              <li class="home_view_img">
+                <img src="./img/home/home_cardbanner.png" alt="">
+              </li>
+              <li class="home_text">
+                <p>cj one 프리즘 신한카드 배너</p>
+                <p>2d 그래픽디자인</p>
+              </li>
+              <li class="home_rod">
+                <div class="home_rod_ani"></div>
+              </li>  
+            </ul>
+  
+            <ul class="home_view">
+              <li class="home_view_img">
+                <img src="./img/home/home_bong.png" alt="">
+              </li>
+              <li class="home_text">
+                <p>봉구스 밥버거</p>
+                <p>pc 웹 퍼블리싱 | 메인페이지</p> 
+              </li>
+              <li class="home_rod">
+                <div class="home_rod_ani"></div>
+              </li>  
+            </ul>
+  
+            <ul class="home_view">
+              <li class="home_view_img">
+                <img src="./img/home/home_responsive.png" alt="">
+              </li>
+              <li class="home_text">
+                <p>web trends 2024</p>
+                <p>반응형 웹 퍼블리싱 | 메인페이지</p>
+              </li>
+              <li class="home_rod">
+                <div class="home_rod_ani"></div>
+              </li>  
+            </ul>
           </div>
+
           <div class="home_bottom">
             <ul class="home_menu">
               <li>
@@ -81,44 +128,16 @@
                 <a href="#webplanning">web planning</a>
               </li>
             </ul>
-            <div class="home_view_content">
-              <ul>
-                <li class="home_text htxtVisible">
-                  <p>imstudio</p>
-                  <p>pc 웹 퍼블리싱 | 전체페이지</p>
-                </li>
-                <li class="home_text">
-                  <p>cj one 프리즘 신한카드 배너</p>
-                  <p>2d 그래픽디자인</p>
-                </li>
-                <li class="home_text">
-                  <p>봉구스 밥버거</p>
-                  <p>pc 웹 퍼블리싱 | 메인페이지</p> 
-                </li>
-                <li class="home_text">
-                  <p>web trends 2024</p>
-                  <p>반응형 웹 퍼블리싱 | 메인페이지</p>
-                </li>
-              </ul>
-              <ul class="home_btn_list">
-                <li class="home_btn_txt">0<span>1</span></li>
-                <li><i class="home_btn home_left_btn xi-angle-left"></i></li>
-                <li class="home_rod">
-                  <div class="home_rod_ani hr_ani"></div>
-                  <div class="home_rod_ani"></div>
-                  <div class="home_rod_ani"></div>
-                  <div class="home_rod_ani"></div>
-                </li>  
-                <li>
-                  <i class="home_btn home_right_btn xi-angle-right"></i>
-                </li>
-                <li >04</li>
-                <li class="home_play_stop">
-                  <i class="home_play xi-play"></i>
-                  <i class="home_pause xi-pause"></i>
-                </li>
-              </ul>
-            </div>
+            <ul class="home_btn_list">
+              <li class="home_btn_txt">0<span>1</span></li>
+              <li><i class="home_btn home_left_btn xi-angle-left"></i></li>
+              <li><i class="home_btn home_right_btn xi-angle-right"></i></li>
+              <li >04</li>
+              <li class="home_play_stop">
+                <i class="home_play xi-play"></i>
+                <i class="home_pause xi-pause"></i>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
