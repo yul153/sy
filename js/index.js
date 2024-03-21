@@ -43,19 +43,19 @@ $(document).ready(function () {
     }
   });
 
-    $(".wpContent").on("mouseenter DOMMouseScroll", function () {
-      wheel = false;
-    });
-    $(".wpContent").on("mouseleave DOMMouseScroll", function () {
-      wheel = true;
-    });
-    $(".wplInner").on("mouseenter DOMMouseScroll", function () {
-      wheel = false;
-    });
-    $(".wplInner").on("mouseleave DOMMouseScroll", function () {
-      wheel = true;
-    });
-  
+  $(".wpContent").on("mouseenter DOMMouseScroll", function () {
+    wheel = false;
+  });
+  $(".wpContent").on("mouseleave DOMMouseScroll", function () {
+    wheel = true;
+  });
+  $(".wplInner").on("mouseenter DOMMouseScroll", function () {
+    wheel = false;
+  });
+  $(".wplInner").on("mouseleave DOMMouseScroll", function () {
+    wheel = true;
+  });
+
 
 
   /*스크롤이벤트______________________ */
@@ -97,136 +97,136 @@ $(document).ready(function () {
 
 
   /* Home____________________________________ */
-    let $himage = $(".home_view_img");
-    let $htext = $(".home_text");
-    let $hlbtn = $(".home_left_btn");
-    let $hrbtn = $(".home_right_btn");
-    let hBtnTxt;
-    let oldImage = 0;
-    let newImage = 0;
-    let oldText = 0;
-    let newText = 0;
-    let count = $himage.length;
-  
-    //이미지 전환효과 함수
-    function changeImage(newImage) {
-      if (oldImage != newImage) {
-        $himage.eq(oldImage).removeClass("himgVisible");
-        $himage.eq(newImage).addClass("himgVisible");
-        $himage.eq(oldImage).siblings(".home_rod").find(".home_rod_ani").removeClass("hr_ani");
-        $himage.eq(newImage).siblings(".home_rod").find(".home_rod_ani").addClass("hr_ani");
-      }
-      oldImage = newImage;
-    };
-  
-    //텍스트 전환효과 함수
-    function changeText(newText) {
-      if (oldText != newText) {
-        $htext.eq(oldText).removeClass("htxtVisible")
-        $htext.eq(newText).addClass("htxtVisible");
-      }
-      oldText = newText;
-    };
-  
-    //자동함수-이미지
-    function autoHimage() {
-      newImage++;
-      if (newImage > count - 1) {
-        newImage = 0;
-      }
-      changeImage(newImage);
-      hBtnTxt = newImage;
-      pageNum();
-    };
-    //자동함수-텍스트
-    function autoHtext() {
-      newText++;
-      if (newText > count - 1) {
-        newText = 0;
-      }
-      changeText(newText);
-    };
-  
+  let $himage = $(".home_view_img");
+  let $htext = $(".home_text");
+  let $hlbtn = $(".home_left_btn");
+  let $hrbtn = $(".home_right_btn");
+  let hBtnTxt;
+  let oldImage = 0;
+  let newImage = 0;
+  let oldText = 0;
+  let newText = 0;
+  let count = $himage.length;
+
+  //이미지 전환효과 함수
+  function changeImage(newImage) {
+    if (oldImage != newImage) {
+      $himage.eq(oldImage).removeClass("himgVisible");
+      $himage.eq(newImage).addClass("himgVisible");
+      $himage.eq(oldImage).siblings(".home_rod").find(".home_rod_ani").removeClass("hr_ani");
+      $himage.eq(newImage).siblings(".home_rod").find(".home_rod_ani").addClass("hr_ani");
+    }
+    oldImage = newImage;
+  };
+
+  //텍스트 전환효과 함수
+  function changeText(newText) {
+    if (oldText != newText) {
+      $htext.eq(oldText).removeClass("htxtVisible")
+      $htext.eq(newText).addClass("htxtVisible");
+    }
+    oldText = newText;
+  };
+
+  //자동함수-이미지
+  function autoHimage() {
+    newImage++;
+    if (newImage > count - 1) {
+      newImage = 0;
+    }
+    changeImage(newImage);
+    hBtnTxt = newImage;
+    pageNum();
+  };
+  //자동함수-텍스트
+  function autoHtext() {
+    newText++;
+    if (newText > count - 1) {
+      newText = 0;
+    }
+    changeText(newText);
+  };
+
+  timer1 = setInterval(autoHimage, 4000);
+  timer2 = setInterval(autoHtext, 4000);
+
+  //좌우버튼
+  $hlbtn.click(function () {
+    clearInterval(timer1);
+    clearInterval(timer2);
+    $(".home_play").hide();
+    $(".home_pause").show();
+
+    newImage--;
+    if (newImage < 0) {
+      newImage = count - 1;
+    }
+    changeImage(newImage);
+
+    newText--;
+    if (newText < 0) {
+      newText = count - 1;
+    }
+    changeText(newText);
+    hBtnTxt = newImage;
+    pageNum();
+
     timer1 = setInterval(autoHimage, 4000);
     timer2 = setInterval(autoHtext, 4000);
-  
-    //좌우버튼
-    $hlbtn.click(function () {
-      clearInterval(timer1);
-      clearInterval(timer2);
-      $(".home_play").hide();
-      $(".home_pause").show();
-  
-      newImage--;
-      if (newImage < 0) {
-        newImage = count - 1;
-      }
-      changeImage(newImage);
-  
-      newText--;
-      if (newText < 0) {
-        newText = count - 1;
-      }
-      changeText(newText);
-      hBtnTxt = newImage;
-      pageNum();
-  
-      timer1 = setInterval(autoHimage, 4000);
-      timer2 = setInterval(autoHtext, 4000);
-    });
-  
-    $hrbtn.click(function () {
-      clearInterval(timer1);
-      clearInterval(timer2);
-      $(".home_play").hide();
-      $(".home_pause").show();
-  
-      newImage++;
-      if (newImage > count - 1) {
-        newImage = 0;
-      }
-      changeImage(newImage);
-  
-      newText++;
-      if (newText >= count - 1) {
-        newText = 0;
-      }
-      changeText(newText);
-      hBtnTxt = newImage;
-      pageNum();
-  
-      timer1 = setInterval(autoHimage, 4000);
-      timer2 = setInterval(autoHtext, 4000);
-    });
-  
-    //페이지 번호 표시 함수
-    function pageNum() {
-      $(".home_btn_txt>span").text(hBtnTxt + 1);
-    };
-  
-    //정지재생버튼
+  });
+
+  $hrbtn.click(function () {
+    clearInterval(timer1);
+    clearInterval(timer2);
     $(".home_play").hide();
-  
-    $(".home_pause").click(function () {
-      clearInterval(timer1);
-      clearInterval(timer2);
-      $himage.eq(newImage).siblings(".home_rod").find(".home_rod_ani").removeClass("hr_ani");
-      $(".home_pause").hide();
-      $(".home_play").show();
-    });
-  
-    //재생막대
+    $(".home_pause").show();
+
+    newImage++;
+    if (newImage > count - 1) {
+      newImage = 0;
+    }
+    changeImage(newImage);
+
+    newText++;
+    if (newText >= count - 1) {
+      newText = 0;
+    }
+    changeText(newText);
+    hBtnTxt = newImage;
+    pageNum();
+
+    timer1 = setInterval(autoHimage, 4000);
+    timer2 = setInterval(autoHtext, 4000);
+  });
+
+  //페이지 번호 표시 함수
+  function pageNum() {
+    $(".home_btn_txt>span").text(hBtnTxt + 1);
+  };
+
+  //정지재생버튼
+  $(".home_play").hide();
+
+  $(".home_pause").click(function () {
+    clearInterval(timer1);
+    clearInterval(timer2);
+    $himage.eq(newImage).siblings(".home_rod").find(".home_rod_ani").removeClass("hr_ani");
+    $(".home_pause").hide();
+    $(".home_play").show();
+  });
+
+  //재생막대
+  $himage.eq(newImage).siblings(".home_rod").find(".home_rod_ani").addClass("hr_ani");
+
+  //재생버튼
+  $(".home_play").click(function () {
+    timer1 = setInterval(autoHimage, 4000);
+    timer2 = setInterval(autoHtext, 4000);
     $himage.eq(newImage).siblings(".home_rod").find(".home_rod_ani").addClass("hr_ani");
-  
-    //재생버튼
-    $(".home_play").click(function () {
-      timer1 = setInterval(autoHimage, 4000);
-      timer2 = setInterval(autoHtext, 4000);
-      $himage.eq(newImage).siblings(".home_rod").find(".home_rod_ani").addClass("hr_ani");
-      $(".home_play").hide();
-      $(".home_pause").show();
-    });
-  
+    $(".home_play").hide();
+    $(".home_pause").show();
+  });
+
 
   /* Header____________________________________ */
   // 햄버거메뉴
@@ -484,6 +484,7 @@ $(document).ready(function () {
       });
   } */
   /* 안씀 document.querySelectorAll("#scroll").forEach(el => {
+
     let isScrolling = false;
     let scrollTarget = 0;
 
@@ -505,21 +506,27 @@ $(document).ready(function () {
     }
   });
 }); */
+  /*   $(".wpContent").mouseenter(function () {
+      $(this).css("backgroundPosition", "0 100%");
+    });
+  
+    $(".wpContent").mouseleave(function () {
+      $(this).css("backgroundPosition", "0 0");
+    }); */
 
   $('.wpContentsList').slick({
     arrows: true,
     speed: 500,
   });
 
-  $('.wpContentsList').animate({ scrollTop: 0 }, 500);
-
-  $(".wpContent").mouseenter(function () {
-    $(this).css("backgroundPosition", "0 100%");
+  $(".slick-prev").click(function () {
+    $('.wpContent').animate({ scrollTop: 0 }, 1000);
   });
 
-  $(".wpContent").mouseleave(function () {
-    $(this).css("backgroundPosition", "0 0");
+  $(".slick-next").click(function () {
+    $('.wpContent').animate({ scrollTop: 0 }, 1000);
   });
+
 
   /* Responsive Web____________________________________ */
   $(".up").mouseenter(function () {

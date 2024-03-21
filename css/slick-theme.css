@@ -76,7 +76,7 @@
 }
 
 .slick-prev {
-    left: -90px;
+    left: -60px;
 }
 
 [dir='rtl'] .slick-prev {
@@ -88,7 +88,7 @@
     content: '\e93b';
     font-family: xeicon;
     font-size: 50px;
-    color: #3E2723;
+    color: #0086aa;
 
 }
 
@@ -97,7 +97,7 @@
 }
 
 .slick-next {
-    right: -60px;
+    right: -30px;
 }
 
 [dir='rtl'] .slick-next {
@@ -109,7 +109,7 @@
     content: '\e93e';
     font-family: xeicon;
     font-size: 50px;
-    color: #3E2723;
+    color: #0086aa;
 }
 
 [dir='rtl'] .slick-next:before {

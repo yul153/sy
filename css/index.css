@@ -103,7 +103,7 @@ img {
   transform: translateY(-50%);
   width: 135px;
   height: 20px;
-  font-size: 14px;
+  font-size: 12px;
   text-align: right;
   text-transform: uppercase;
   color: #0086aa;
@@ -478,9 +478,13 @@ h2 {
   color: #0086aa;
   text-transform: uppercase;
   letter-spacing: -2px;
-  margin: 80px 0 0 30px;
+  padding: 80px 0 0 30px;
   opacity: 0;
   transition: 0.5s;
+}
+
+h2>span {
+  color: #FFCCBC;
 }
 
 h3 {
@@ -493,6 +497,7 @@ h3 {
 #profile {
   width: 100vw;
   height: 100vh;
+  /* background-color: #FFCCBC; */
 }
 
 .profileInner {
@@ -513,6 +518,10 @@ h3 {
   left: 0;
 }
 
+.proTitle h2 {
+  color: #0086aa;
+}
+
 .proCard {
   width: 100%;
   height: 100%;
@@ -531,7 +540,7 @@ h3 {
   width: 450px;
   height: 400px;
   border-radius: 4px;
-  background-color: #eee;
+  background-color: #fff;
   overflow: hidden;
   transition: 0.5s;
 
@@ -549,7 +558,7 @@ h3 {
   background-color: transparent;
   border-width: 1px 0;
   border-style: solid;
-  border-color: #0086aa;
+  border-color: #666;
   padding: 30px 0;
   display: flex;
   justify-content: center;
@@ -559,6 +568,7 @@ h3 {
 .proCardInfo>h4 {
   font-size: 20px;
   font-weight: 500;
+  color: #0086aa;
   text-align: center;
   letter-spacing: -0.05em;
   text-transform: uppercase;
@@ -590,18 +600,19 @@ h3 {
 .profileTexts .profileText {
   width: auto;
   height: auto;
-  border-top: 1px solid #0086aa;
+  border-top: 1px solid #666;
   padding: 10px 10px 0 10px;
 }
 
 .profileText h3 {
   width: 100%;
-  color: #0086aa;
+  color: #666;
 }
 
 .profileTextInner>p:first-child {
   font-size: 15px;
   font-weight: 500;
+  color: #0086aa;
   margin: 20px 0 4px 0;
 }
 
@@ -619,6 +630,7 @@ h3 {
 .lisense li {
   font-size: 15px;
   font-weight: 400;
+  color: #0086aa;
   margin-bottom: 6px;
 }
 
@@ -651,7 +663,7 @@ h3 {
 .skillTitle span {
   font-size: 15px;
   font-weight: 400;
-  color: #333;
+  color: #0086aa;
 }
 
 .skill .skillGraph {
@@ -664,7 +676,7 @@ h3 {
 .skillGraph .sGraph {
   width: calc(180 * 0.9px);
   height: inherit;
-  background-color: #FFCCBC;
+  background-color: #0086aa;
   border-radius: 30px 0 0 30px;
   transform-origin: left;
   will-change: transform;
@@ -691,7 +703,6 @@ h3 {
 #webdesign {
   width: 100vw;
   height: 100vh;
-  /* background-color: red; */
 }
 
 .webdesignInner {
@@ -961,22 +972,15 @@ h3 {
   height: 100vh;
 }
 
-/* .webpublishingInner .wpTitle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 0 10px 50px;
-} */
-
 .wpContentsList .wpContents {
   width: 1400px;
-  height: 700px;
-  margin: 0 auto;
+  height: 750px;
+  margin: 10px auto 0;
 }
 
 .wpContents .wpContent {
   width: 1400px;
-  height: 550px;
+  height: 600px;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -995,7 +999,7 @@ h3 {
 /* 스크롤 움직이는 바 */
 .wpContent::-webkit-scrollbar-thumb {
   height: 25%;
-  background-color: #3D4770;
+  background-color: #0086aa;
   border-radius: 10px;
 }
 
@@ -1007,7 +1011,8 @@ h3 {
 .wpContents .wpConTextList {
   width: inherit;
   height: 150px;
-  background-color: #fff;
+  /* background-color: #FDF5E6; */
+  background-color: #FFCCBC;
 }
 
 .wpConTextList .wpConText {
@@ -1016,14 +1021,12 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* border-top: 2px dashed #333; */
   padding-right: 60px;
 }
 
 .wpConText .wpTextTitle {
   width: 320px;
   height: 90%;
-  /* border-right: 2px dashed #333; */
   padding: 0 60px;
   display: flex;
   justify-content: center;
@@ -1069,8 +1072,9 @@ h3 {
   color: #666;
 }
 
-.wpText2 .personal {
-  background-color: #FFCCBC;
+.wpText1 .wpText2 .personal {
+  color: #fff;
+  background-color: #0086aa;
   padding: 4px 12px;
   border-radius: 4px;
 }
@@ -1086,7 +1090,7 @@ h3 {
 
 .wpTextinner>li:first-child>i.xi-check {
   font-size: 16px;
-  color: #FFCCBC;
+  color: #0086aa;
 }
 
 .wpTextinner li:last-child {
@@ -1110,7 +1114,7 @@ h3 {
   font-weight: 500;
   text-align: center;
   text-transform: capitalize;
-  border: 2px solid #FFCCBC;
+  border: 2px solid #0086aa;
   line-height: 48px;
   border-radius: 4px;
   z-index: 31;
@@ -1119,7 +1123,7 @@ h3 {
 .wpviewButton li a:hover {
   color: #fff;
   border: 2px solid transparent;
-  background-color: #FFCCBC;
+  background-color: #0086aa;
 }
 
 
@@ -1128,11 +1132,9 @@ h3 {
 #responsiveweb {
   width: 100%;
   height: 100vh;
-  background-color: #666;
 }
 
 .resContents {
-  /* border: 2px dashed #fff; */
   position: relative;
   display: flex;
   width: 100%;
@@ -1144,22 +1146,10 @@ h3 {
 .resTextContents {
   flex: 1.2;
   background-color: #fcf7f0;
-  /* border-right: 2px dashed #333; */
-}
-
-.resTextContents .resTitle {
-  position: relative;
-  top: 50px;
-  left: 154px;
 }
 
 .resTitle h2 {
-  color: #3D4770;
   margin-bottom: 100px;
-}
-
-.resTitle h2 span {
-  color: #FFCCBC;
 }
 
 .resTextTitle {
@@ -1170,7 +1160,7 @@ h3 {
 .resTextTitle li:first-child {
   font-size: 48px;
   font-weight: 700;
-  color: #333;
+  color: #0086aa;
   letter-spacing: -1px;
   text-transform: uppercase;
 }
@@ -1200,7 +1190,7 @@ h3 {
   font-weight: 600;
   text-align: center;
   color: #fff;
-  background-color: #3D4770;
+  background-color: #0086aa;
   border-radius: 4px;
   padding: 6px 4px;
   margin-right: 10px;
@@ -1233,7 +1223,7 @@ h3 {
 
 .resBtnInner>li:first-child>i.xi-check {
   font-size: 16px;
-  color: #FFCCBC;
+  color: #0086aa;
 }
 
 .resBtnInner li:last-child {
@@ -1259,7 +1249,7 @@ h3 {
   font-size: 18px;
   font-weight: 500;
   text-align: center;
-  border: 2px solid #FFCCBC;
+  border: 2px solid #0086aa;
   line-height: 48px;
   border-radius: 4px;
 }
@@ -1282,7 +1272,7 @@ h3 {
 .resViewBtn li a:hover {
   color: #fff;
   border: 2px solid transparent;
-  background-color: #FFCCBC;
+  background-color: #0086aa;
 }
 
 
@@ -1472,13 +1462,6 @@ h3 {
   height: 100%;
 }
 
-.webplanningInner .wplTitle {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 30px 0 0 50px;
-}
-
 .wplcontentTitle {
   font-size: 24px;
   font-weight: 500;
@@ -1494,15 +1477,13 @@ h3 {
 .wplcontentTitle>li {
   background-color: #ddd;
   padding: 10px 20px;
-  /* border: 2px dashed #333; */
   border-radius: 12px;
   cursor: pointer;
 }
 
 .wplcontentTitle>li.active {
   color: #fff;
-  background-color: #3D4770;
-  /* border-color: #fff; */
+  background-color: #0086aa;
 }
 
 
@@ -1543,9 +1524,6 @@ h3 {
   text-transform: capitalize;
   line-height: 55px;
   background-color: #ddd;
-  /*   border-width: 2px 0 2px 2px;
-  border-style: dashed;
-  border-color: #333; */
   border-radius: 12px 0 0 12px;
   margin-bottom: 2px;
   cursor: pointer;
@@ -1553,8 +1531,7 @@ h3 {
 
 .wplMenu>li.active {
   color: #fff;
-  background-color: #3D4770;
-  /* border-color: #fff; */
+  background-color: #0086aa;
 }
 
 .wplcontentTitle>li:hover,
@@ -1566,7 +1543,6 @@ h3 {
 .wplInner {
   width: 1230px;
   height: 700px;
-  /* border: 2px dashed #333; */
   overflow: hidden;
 }
 
