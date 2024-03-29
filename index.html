@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>박소율-포트폴리오</title>
+  <title>PSY_Portfolio</title>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
   <!-- xicon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- font awessome -->
+  <link rel="shortcut icon" href="./img/favicon.png">
   <link rel="stylesheet" href="css/ScrollTrigger.css"> <!-- Data Scroll PlugIn(스크롤 내릴 때 컨텐츠 움직이기) -->
   <link rel="stylesheet" type="text/css" href="css/slick.css"/>
   <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
@@ -17,29 +18,30 @@
   <div class="wrap">
 
     <div class="mainIndicator">
-      <div class="mi1 active"><span>home</span></div>
-      <div class="mi2"><span>profile</span></div>
-      <div class="mi3"><span>web design</span></div>
-      <div class="mi4"><span>web publishing</span></div>
-      <div class="mi5"><span>responsive web</span></div>
-      <div class="mi6"><span>web planning</span></div>
+      <p class="mi1 active"><span>home</span></p>
+      <p class="mi2"><span>profile</span></p>
+      <p class="mi3"><span>web design</span></p>
+      <p class="mi4"><span>web publishing</span></p>
+      <p class="mi5"><span>responsive web</span></p>
+      <p class="mi6"><span>web planning</span></p>
+      <p class="topBtn"><i class="xi-arrow-top">top</i></p>
     </div>
 
     <header class="active">
       <nav>
         <ul id="gnb">
-          <li data-text="Home"><a href="#home">Home</a></li>
-          <li data-text="Profile"><a href="#profile">Profile</a></li>
-          <li data-text="Web&nbsp;Design"><a href="#webdesign">Web&nbsp;Design</a></li>
-          <li data-text="Web&nbsp;Publishing"><a href="#webpublishing">Web&nbsp;Publishing</a></li>
-          <li data-text="Responsive&nbsp;Web"><a href="#responsiveweb">Responsive&nbsp;Web</a></li>
-          <li data-text="Web&nbsp;Planning"><a href="#webplanning">Web&nbsp;Planning</a></li>
+          <li class="active"><a href="#home">Home</a></li>
+          <li><a href="#profile">Profile</a></li>
+          <li><a href="#webdesign">Web&nbsp;Design</a></li>
+          <li><a href="#webpublishing">Web&nbsp;Publishing</a></li>
+          <li><a href="#responsiveweb">Responsive&nbsp;Web</a></li>
+          <li><a href="#webplanning">Web&nbsp;Planning</a></li>
         </ul>
       </nav>
     </header>
 
     <div id="container">
-      <section id="home" class="area">
+      <section id="home" class="area active">
         <div class="home_inner">
           <div class="home_view_list">
             <ul class="home_view">
@@ -97,7 +99,7 @@
 
           <div class="home_bottom">
             <ul class="home_menu">
-              <li>
+              <li class="active">
                 <img src="./img/home/profile.png" alt="profile img" class="hm1">
                 <span>01</span>
                 <a href="#profile">profile</a>
@@ -212,9 +214,9 @@
                 <li class="skill">
                   <div class="skillTitle">
                     <span>jQuery</span>
-                    <span>90%</span>
+                    <span>70%</span>
                   </div>
-                  <div class="skillGraph">
+                  <div class="skillGraph skillGraph70">
                     <div class="sGraph"></div>
                   </div>
                 </li>
@@ -239,9 +241,9 @@
                 <li class="skill">
                   <div class="skillTitle">
                     <span>Figma</span>
-                    <span>70%</span>
+                    <span>90%</span>
                   </div>
-                  <div class="skillGraph skillGraph70">
+                  <div class="skillGraph">
                     <div class="sGraph"></div>
                   </div>
                 </li>
@@ -551,7 +553,6 @@
               </li>
 
               <li class="wpContents">
-                <div class="dashed"></div>
                 <div class="wpContent wpContentseed">
                   <img src="img/webpublishing/viewpage_category.png" alt="seedmool viewpage">
                 </div>
@@ -599,7 +600,6 @@
               </li>
 
               <li class="wpContents">
-                <div class="dashed"></div>
                 <div class="wpContent wpContentim">
                   <img src="img/webpublishing/viewpage_allpage.jpg" alt="imstudio viewpage">
                 </div>
@@ -751,196 +751,104 @@
       <!-- Web Planning -->
       <section id="webplanning" class="area">
         <div class="webplanningInner">
+          <div class="wplbg"></div>
           <div class="wplTitle">
-            <h2 data-scroll="toggle(.fromBottomIn, .fromBottomOut) addHeight"><span>web</span> planning</h2>
+            <h2  data-scroll="toggle(.fromBottomIn, .fromBottomOut) addHeight"><span>web</span> planning</h2>
           </div>
 
-          <ul class="wplcontentTitle">
+          <ul class="wplTab">
             <li data-wpl="wpl1" class="active">imstudio</li>
             <li data-wpl="wpl2">yogerpresso</li>
             <li data-wpl="wpl3">webtrends</li>
             <li data-wpl="wpl4">thehaam</li>
           </ul>
-          <div class="wplcontents">
-            <ul class="wplcontentList">
-              <!-- imstudio -->
-              <li id="wpl1" class="wplcontent active">
-                <ul class="wplMenu">
-                  <li data-imbtn="imbtn1" class="active">스토리보드</li>
-                  <li data-imbtn="imbtn2">산출물목록표</li>
-                  <li data-imbtn="imbtn3">프로젝트완료보고서</li>
-                  <li data-imbtn="imbtn4">모니터링체크리스트</li>
-                  <li data-imbtn="imbtn5">수정완료보고서</li>
-                  <li data-imbtn="imbtn6">result</li>
+          <ul class="wplcontentList">
+            <!-- imstudio -->
+            <li id="wpl1" class="active">
+              <div class="wplContent wplContent1">
+                <div class="wplMenu">
+                  <p>스토리보드</p>
+                  <p>산출물기록표</p>
+                  <p>프로젝트완료보고서</p>
+                  <p>모니터링체크리스트</p>
+                  <p>수정완료보고서</p>
+                </div>
+                <ul class="wplImage">
+                  <li><img src="./img/webplanning/imstudio/imstudio_storyboard.png" alt=""></li>
+                  <li><img src="img/webplanning/imstudio/imstudio_listtable.png" alt="imstudio Deliverable list table"></li>
+                  <li><img src="img/webplanning/imstudio/imstudio_ProjectCompletionReport.png" alt="imstudio ProjectCompletionReport1"></li>
+                  <li><img src="img/webplanning/imstudio/imstudio_MonitoringChecklist.png" alt="imstudio MonitoringChecklist"></li>
+                  <li><img src="img/webplanning/imstudio/imstudio_modify.png" alt="imstudio"></li>
                 </ul>
+                <div class="imbtn6Btn">
+                  <a href="http://sy12.dothome.co.kr/allpage/index.html" target="_blank">site view</a>
+                </div>
+              </div>
+
+              <div class="wplView">
+                <img src="img/webplanning/imstudio/viewpage_allpage.jpg" alt="imstudio MonitoringChecklist">
+              </div>
+            </li>  
   
-                <ul class="wplInner">
-                  
-                  <li id="imbtn1" class="wplInnerContent active">
-                    <img src="./img/webplanning/imstudio/imstudio_storyboard/imstudio_storyboard.png" alt="">
-                  </li>   
-                  
-                  <li id="imbtn2" class="wplInnerContent">
-                    <ul class="wplImage">
-                      <li>
-                        <img src="img/webplanning/imstudio/imstudio_listtable.png" alt="imstudio Deliverable list table">
-                      </li>
-                    </ul>
-                  </li>
-      
-                  <li id="imbtn3" class="wplInnerContent">
-                    <ul class="wplButton">
-                      <li class="sbtnLeft s3btnLeft"><i class="xi-angle-left-thin"></i></li>
-                      <li class="sbtnRight s3btnRight"><i class="xi-angle-right-thin"></i></li>
-                    </ul>
-                    <ul class="wplImage wpl3Image">
-                      <li><img src="img/webplanning/imstudio/imstudio_ProjectCompletionReport/imstudio_ProjectCompletionReport1.JPG" alt="imstudio ProjectCompletionReport1"></li>
-                      <li><img src="img/webplanning/imstudio/imstudio_ProjectCompletionReport/imstudio_ProjectCompletionReport2.JPG" alt="imstudio ProjectCompletionReport2"></li>
-                      <li><img src="img/webplanning/imstudio/imstudio_ProjectCompletionReport/imstudio_ProjectCompletionReport3.JPG" alt="imstudio ProjectCompletionReport3"></li>
-                      <li><img src="img/webplanning/imstudio/imstudio_ProjectCompletionReport/imstudio_ProjectCompletionReport4.JPG" alt="imstudio ProjectCompletionReport4"></li>
-                      <li><img src="img/webplanning/imstudio/imstudio_ProjectCompletionReport/imstudio_ProjectCompletionReport5.JPG" alt="imstudio ProjectCompletionReport5"></li>
-                      <li><img src="img/webplanning/imstudio/imstudio_ProjectCompletionReport/imstudio_ProjectCompletionReport6.JPG" alt="imstudio ProjectCompletionReport6"></li>
-                      <li><img src="img/webplanning/imstudio/imstudio_ProjectCompletionReport/imstudio_ProjectCompletionReport7.JPG" alt="imstudio ProjectCompletionReport7"></li>
-                    </ul>
-                  </li>
-      
-                  <li id="imbtn4" class="wplInnerContent">
-                    <ul class="wplImage">
-                      <li><img src="img/webplanning/imstudio/imstudio_MonitoringChecklist.png" alt="imstudio MonitoringChecklist"></li>
-                    </ul>
-                  </li> 
-      
-                  <li id="imbtn5" class="wplInnerContent">
-                    <ul class="wplButton">
-                      <li><a href="#none" class="sbtnLeft s5btnLeft"><i class="xi-angle-left-thin"></i></a></li>
-                      <li><a href="#none" class="sbtnRight s5btnRight"><i class="xi-angle-right-thin"></i></a></li>
-                    </ul>
-                    <ul class="wplImage wpl5Image">
-                      <li><img src="img/webplanning/imstudio/imstudio_modify/imstudio_modify1.JPG" alt="imstudio"></li>
-                      <li><img src="img/webplanning/imstudio/imstudio_modify/imstudio_modify2.JPG" alt="imstudio"></li>
-                      <li><img src="img/webplanning/imstudio/imstudio_modify/imstudio_modify3.JPG" alt="imstudio"></li>
-                      <li><img src="img/webplanning/imstudio/imstudio_modify/imstudio_modify4.JPG" alt="imstudio"></li>
-                    </ul>
-                  </li>
+            <!-- yogerpresso -->
+            <li id="wpl2">
+              <div class="wplContent wplContent2">
+                <div class="wplMenu">
+                  <p>와이어프레임</p>
+                  <p>메타포아이콘</p>
+                  <p>스타일가이드</p>
+                  <p class="result">result</p>
+                </div>
+    
+                <ul class="wplImage">
+                  <li><img src="img/webplanning/yogerpresso/yoger_wireframe.png" alt="yogerpresso wireframeReport1"></li>
+                  <li><img src="img/webplanning/yogerpresso/yoger_metaphor.png" alt="yogerpresso metaphorReport"></li>
+                  <li class="wplStyle"><img src="img/webplanning/yogerpresso/yoger_StyleGuideReport.png" alt="yogerpresso StyleGuideReport"></li>
+                  <li><img src="img/webplanning/yogerpresso/yoger_viewpage.jpg" alt="yogerpresso StyleGuideReport"></li>
+                </ul>
+              </div>
+            </li>     
   
-                  <li id="imbtn6" class="wplInnerContent">
-                    <ul class="wpl6Image">
-                      <li class="imbtn6Img"><img src="img/webplanning/imstudio/viewpage_allpage.jpg" alt="imstudio MonitoringChecklist"></li>
-                      <li class="imbtn6Btn"><a href="http://sy12.dothome.co.kr/index.html" target="_blank">site view</a></li>
-                    </ul>
-                  </li> 
-                </ul>
-              </li>  
+            <!-- webtrends -->
+            <li id="wpl3">
+              <div class="wplContent wplContent3">
+                <div class="wplMenu">
+                  <p>와이어프레임</p>
+                  <p>반응형웹보고서</p>
+                </div>
     
-              <!-- yogerpresso -->
-              <li id="wpl2" class="wplcontent">
-                <ul class="wplMenu">
-                  <li data-yobtn="yobtn1" class="active">와이어프레임</li>
-                  <li data-yobtn="yobtn2">메타포아이콘</li>
-                  <li data-yobtn="yobtn3">스타일가이드</li>
-                  <li data-yobtn="yobtn4">result</li>
+                <ul class="wplImage">
+                  <li><img src="img/webplanning/webtrend/webtrend_wireframe.png" alt="webtrend wireframe"></li>
+                  <li><img src="img/webplanning/webtrend/webtrend_report.png" alt="webtrend ResponsiveWebReport"></li>
                 </ul>
-    
-                <ul class="wplInner">
-                  <li id="yobtn1" class="active">
-                    <ul class="wplButton">
-                      <li><a href="#none" class="sbtnLeft sbtnyo1Left"><i class="xi-angle-left-thin"></i></a></li>
-                      <li><a href="#none" class="sbtnRight sbtnyo1Right"><i class="xi-angle-right-thin"></i></a></li>
-                    </ul>
-                    <ul class="wplImage wplyo1Image">
-                      <li><img src="img/webplanning/yogerpresso/yoger_wireframeReport1.JPG" alt="yogerpresso wireframeReport1"></li>
-                      <li><img src="img/webplanning/yogerpresso/yoger_wireframeReport2.JPG" alt="yogerpresso wireframeReport2"></li>
-                      <li><img src="img/webplanning/yogerpresso/yoger_wireframeReport3.JPG" alt="yogerpresso wireframeReport3"></li>
-                      <li><img src="img/webplanning/yogerpresso/yoger_wireframeReport4.JPG" alt="yogerpresso wireframeReport4"></li>
-                      <li><img src="img/webplanning/yogerpresso/yoger_wireframeReport5.JPG" alt="yogerpresso wireframeReport5"></li>
-                      <li><img src="img/webplanning/yogerpresso/yoger_wireframeReport6.JPG" alt="yogerpresso wireframeReport6"></li>
-                      <li><img src="img/webplanning/yogerpresso/yoger_wireframeReport7.JPG" alt="yogerpresso wireframeReport7"></li>
-                      <li><img src="img/webplanning/yogerpresso/yoger_wireframe.jpg" alt="yogerpresso wireframe"></li>
-                    </ul>
-                  </li>  
-      
-                  <li id="yobtn2">
-                    <ul class="wplButton">
-                      <li><a href="#none" class="sbtnLeft sbtnyo2Left"><i class="xi-angle-left-thin"></i></a></li>
-                      <li><a href="#none" class="sbtnRight sbtnyo2Right"><i class="xi-angle-right-thin"></i></a></li>
-                    </ul>
-                    <ul class="wplImage wplyo2Image">
-                      <li><img src="img/webplanning/yogerpresso/yoger_metaphorReport.JPG" alt="yogerpresso metaphorReport"></li>
-                      <li><img src="img/webplanning/yogerpresso/yoger_metaphorIcon.jpg" alt="yogerpresso metaphorIcon"></li>
-                    </ul>
-                  </li>  
-      
-                  <li id="yobtn3">
-                    <ul class="wplImage">
-                      <li><img src="img/webplanning/yogerpresso/yoger_StyleGuideReport.jpg" alt="yogerpresso StyleGuideReport"></li>
-                    </ul>
-                  </li>
-                  
-                  <li id="yobtn4">
-                    <ul class="wplImage">
-                      <li><img src="img/webplanning/yogerpresso/yoger_viewpage.jpg" alt="yogerpresso StyleGuideReport"></li>
-                    </ul>
-                  </li>
+                <div class="imbtn6Btn">
+                  <a href="http://sy12.dothome.co.kr/responsive/index.html" target="_blank">site view</a>
+                </div>
+              </div>
+              <div class="wplView">
+                <img src="img/webplanning/imstudio/viewpage_allpage.jpg" alt="imstudio MonitoringChecklist">
+              </div>
+            </li>
   
+            <!-- thehaam -->
+            <li id="wpl4">
+              <div class="wplContent wplContent4">
+                <div class="wplMenu">
+                  <p>와이어프레임</p>
+                  <p>스타일가이드</p>
+                  <p>프로토타입</p>
+                </div>
+                <ul class="wplImage">
+                  <li><img src="img/webplanning/thehaam/thehaam_wireframe.png" alt="thehaam wireframe"></li>
+                  <li><img src="img/webplanning/thehaam/thehaam_styleguide.jpg" alt="thehaam styleguide"></li>
+                  <li><img src="img/webplanning/thehaam/thehaam_prototype.jpg" alt="thehaam styleguide"></li>
                 </ul>
-              </li>     
-    
-              <!-- webtrends -->
-              <li id="wpl3" class="wplcontent">
-                <ul class="wplMenu">
-                  <li data-webbtn="webbtn1" class="active">와이어프레임</li>
-                  <li data-webbtn="webbtn2">반응형웹보고서</li>
-                </ul>
-    
-                <ul class="wplInner">
-                  <li id="webbtn1" class="wplImage active">  
-                    <img src="img/webplanning/webtrend/webtrend_wireframe.png" alt="webtrend wireframe">
-                  </li>
-      
-                  <li id="webbtn2">  
-                    <ul class="wplButton">
-                      <li><a href="#none" class="sbtnLeft sbtnwt1Left"><i class="xi-angle-left-thin"></i></a></li>
-                      <li><a href="#none" class="sbtnRight sbtnwt1Right"><i class="xi-angle-right-thin"></i></a></li>
-                    </ul>
-                    <ul class="wplImage wplwt1Image">
-                      <li><img src="img/webplanning/webtrend/webtrend_ResponsiveWebReport1.JPG" alt="webtrend ResponsiveWebReport1"></li>
-                      <li><img src="img/webplanning/webtrend/webtrend_ResponsiveWebReport2.JPG" alt="webtrend ResponsiveWebReport2"></li>
-                      <li><img src="img/webplanning/webtrend/webtrend_ResponsiveWebReport3.JPG" alt="webtrend ResponsiveWebReport3"></li>
-                      <li><img src="img/webplanning/webtrend/webtrend_ResponsiveWebReport4.JPG" alt="webtrend ResponsiveWebReport4"></li>
-                      <li><img src="img/webplanning/webtrend/webtrend_ResponsiveWebReport5.JPG" alt="webtrend ResponsiveWebReport5"></li>
-                      <li><img src="img/webplanning/webtrend/webtrend_ResponsiveWebReport6.JPG" alt="webtrend ResponsiveWebReport6"></li>
-                      <li><img src="img/webplanning/webtrend/webtrend_ResponsiveWebReport7.JPG" alt="webtrend ResponsiveWebReport7"></li>
-                      <li><img src="img/webplanning/webtrend/webtrend_ResponsiveWebReport8.JPG" alt="webtrend ResponsiveWebReport8"></li>
-                      <li><img src="img/webplanning/webtrend/webtrend_ResponsiveWebReport9.JPG" alt="webtrend ResponsiveWebReport9"></li>
-                      <li><img src="img/webplanning/webtrend/webtrend_ResponsiveWebReport10.JPG" alt="webtrend ResponsiveWebReport10"></li>
-                      <li><img src="img/webplanning/webtrend/webtrend_ResponsiveWebReport11.JPG" alt="webtrend ResponsiveWebReport11"></li>
-                      <li><img src="img/webplanning/webtrend/webtrend_ResponsiveWebReport12.JPG" alt="webtrend ResponsiveWebReport12"></li>
-                      <li><img src="img/webplanning/webtrend/webtrend_ResponsiveWebReport13.JPG" alt="webtrend ResponsiveWebReport13"></li>
-                    </ul>
-                  </li>
-                  <li><button>site vierw</button></li>
-                </ul>
-              </li>
-    
-              <!-- thehaam -->
-              <li id="wpl4" class="wplcontent">
-                <ul class="wplMenu">
-                  <li data-thebtn="thebtn1" class="active">와이어프레임</li>
-                  <li data-thebtn="thebtn2">스타일가이드</li>
-                </ul>
-                <ul class="wplInner">
-                  <li id="thebtn1" class="wplImage active">  
-                    <img src="img/webplanning/thehaam/thehaam_wireframe.jpg" alt="thehaam wireframe">
-                  </li>
-      
-                  <li id="thebtn2" class="wplImage">  
-                    <img src="img/webplanning/thehaam/thehaam_styleguide.jpg" alt="thehaam styleguide">
-                  </li>
-                  <li><button>result view</button></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
+              </div>
+            </li>
+            <div class="wplView">
+              <img src="img/webplanning/imstudio/viewpage_allpage.jpg" alt="imstudio MonitoringChecklist">
+            </div>
+          </ul>
         </div>  
       </section>
     </div>
@@ -953,8 +861,12 @@
   <!-- Script Source -->
   <script src="js/jquery-3.7.0.min.js"></script>
   <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
-  <script src="js/jquery.mousewheel.min.js"></script><!-- 스크롤풀페이지 -->
   <script src="js/index.js"></script>
+
+  <!-- 스크롤풀페이지 -->
+  <script src="js/jquery.mousewheel.min.js"></script>
+  <script src="js/jquery-migrate-1.4.1.min.js"></script>
+  <script src="js/prefixfree.min.js"></script>
 
   <!-- 그래프 순차 재생 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.2/web-animations-next.min.js" integrity="sha512-7/fijTA9Hz7UI8uTqERZ89YumtyKAO4QJ1IvsHCqr7SX26X8FrGDyn2+oMt571I0VeceUiA8WZxCBOZorHxB6Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
