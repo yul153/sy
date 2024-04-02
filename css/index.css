@@ -113,17 +113,23 @@ img {
 }
 
 .mainIndicator .topBtn {
-  border: 1px solid #000;
   width: 20px;
   height: 50px;
   line-height: 50px;
   text-align: center;
+  border-top: 1px solid #333;
   background-color: transparent;
+  display: flex;
+  flex-direction: column;
 }
 
 .topBtn i {
-  border: 1px solid #000;
   font-size: 12px;
+}
+
+.topBtn span {
+  font-size: 12px;
+
 }
 
 
@@ -983,26 +989,37 @@ h3 {
   height: 100vh;
 }
 
-.wpContentsList .wpContents {
-  width: 1400px;
+.wpContentsList {
+  width: 1264px;
   height: 750px;
+}
+
+.wpContentsList .wpContents {
+  border: 1px solid #000;
+  width: 100%;
+  height: 100%;
   margin: 10px auto 0;
-  border: 1px solid #3BA375;
+  background-color: #f2dabb;
 }
 
 .wpContents .wpContent {
-  width: 1400px;
+  width: 100%;
   height: 600px;
-  overflow-y: auto;
-  overflow-x: hidden;
+  /* overflow-y: auto; */
+  /* overflow-x: hidden; */
 }
 
-.wpContent>img {
+.wpContent video {
+  width: 100%;
+  height: 100%;
+}
+
+/* .wpContent>img {
   width: calc(1400px - 12px);
   height: auto;
   object-fit: cover;
   object-position: top;
-}
+} */
 
 .wpContent::-webkit-scrollbar {
   width: 12px;

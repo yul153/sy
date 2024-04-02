@@ -9,9 +9,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- font awessome -->
   <link rel="shortcut icon" href="./img/favicon.png">
-  <link rel="stylesheet" href="css/ScrollTrigger.css"> <!-- Data Scroll PlugIn(스크롤 내릴 때 컨텐츠 움직이기) -->
+  <!-- 슬릭슬라이더-web publishing -->
   <link rel="stylesheet" type="text/css" href="css/slick.css"/>
   <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>
+
   <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
@@ -24,7 +25,7 @@
       <p class="mi4"><span>web publishing</span></p>
       <p class="mi5"><span>responsive web</span></p>
       <p class="mi6"><span>web planning</span></p>
-      <p class="topBtn"><i class="xi-arrow-top">top</i></p>
+      <p class="topBtn"><i class="xi-arrow-top"></i><span>top</span></p>
     </div>
 
     <header class="active">
@@ -438,7 +439,7 @@
                   </div>
   
                   <div class="wduxTabImg">
-                    <div><img src="img/webdesign/UIUX_thumbnail_draft_category.png" alt="UIUX design"></div>
+                    <div><img src="img/webdesign/UIUX_thumbnail_draft_seedmool.png" alt="UIUX design"></div>
                     <div class="wduxDim">
                       <div class="wduxDimText">
                         <p>시드물</p>
@@ -448,7 +449,7 @@
                   </div>
   
                   <div class="wduxTabImg">
-                    <div><img src="img/webdesign/UIUX_thumbnail_draft_responsive.png" alt="UIUX design"></div>
+                    <div><img src="img/webdesign/UIUX_thumbnail_draft_yogerpresso.png" alt="UIUX design"></div>
                     <div class="wduxDim">
                       <div class="wduxDimText">
                         <p>요거프레소</p>
@@ -458,7 +459,7 @@
                   </div>
   
                   <div class="wduxTabImg">
-                    <div><img src="img/webdesign/UIUX_thumbnail_draft_responsive.png" alt="UIUX design"></div> <!-- 반응형썸네일로 변경하기 -->
+                    <div><img src="img/webdesign/UIUX_thumbnail_draft_thehaam.png" alt="UIUX design"></div>
                     <div class="wduxDim">
                       <div class="wduxDimText">
                         <p>더함티비</p>
@@ -507,7 +508,7 @@
             <ul class="wpContentsList">
               <li class="wpContents">
                 <div class="wpContent wpContentbong">
-                  <img src="img/webpublishing/viewpage_onepage.png" alt="bongousse viewpage">
+                  <video src="./video/webpublishing/video_onepage.mp4" controls autoplay></video>
                 </div>
                 <div class="wpConTextList">
                   <ul class="wpConText">
@@ -867,24 +868,12 @@
   <script src="js/jquery.mousewheel.min.js"></script>
   <script src="js/jquery-migrate-1.4.1.min.js"></script>
   <script src="js/prefixfree.min.js"></script>
+  <script src="js/smooth-scroll.js"></script>
 
   <!-- 그래프 순차 재생 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.2/web-animations-next.min.js" integrity="sha512-7/fijTA9Hz7UI8uTqERZ89YumtyKAO4QJ1IvsHCqr7SX26X8FrGDyn2+oMt571I0VeceUiA8WZxCBOZorHxB6Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <script src="js/slick.js"></script><!-- 슬릭슬라이더 -->
-
-  <!--Data Scroll PlugIn(스크롤 내릴 때 컨텐츠 움직이기)-->
-  <script src="js/ScrollTrigger.min.js"></script>
-  <script>
-  window.counter = function() {
-    var span = this.querySelector('span');
-    var current = parseInt(span.textContent);
-      
-    span.textContent = current + 1;
-  };
-    document.addEventListener('DOMContentLoaded', function(){
-    ScrollTrigger.init();
-  });
-  </script>
+  <!-- 슬릭슬라이더 -->
+  <script src="js/slick.js"></script>
 </body>
 </html>

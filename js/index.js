@@ -366,7 +366,7 @@ $(document).ready(function () {
   /* Web Publishing____________________________________ */
   /* 안씀 const wpContent = document.querySelector('.wpContentsList');
   const wpContentTimeline = document.querySelector('.wpContentsWrapper');
-  
+   
   wpContent.animate(
     [
       { transform: 'translateX(0)'},
@@ -385,21 +385,21 @@ $(document).ready(function () {
   /*  안씀 let container = $("#scroll");
     let boxes = $(".wpContents");
     let currentIndex = 0;
-  
+   
     $(window).on("wheel", function (event) {
       event.preventDefault();
       let deltah = event.originalEvent.daltaY;
-  
+   
       if (deltah > 0 && currentIndex < boxes.length - 1) {
         currentIndex++;
       } else if (deltah < 0 && currentIndex > 0) {
         currentIndex--;
       }
-  
+   
       let scrollTo = currentIndex * $(window).width();
       container.animate({ scrollLeft: scrollTo }, 500);
     });
-  
+   
     $(window).on("resize", function () {
       let scrollTo = currentIndex * $(window).width();
       container.scrollLeft(scrollTo);
@@ -411,7 +411,7 @@ $(document).ready(function () {
     let win_wid = window.innerWidth;
     let s_move_max = (s_wid - (win_wid / 2)) * -1;
     let s_pos = 0;
-  
+   
     cont_2.addEventListener('wheel', function (ev) {
       ev.preventDefault;
       if (ev.deltaY < 0 && s_pos >= 0) {
@@ -422,7 +422,7 @@ $(document).ready(function () {
       }
       move_slider(ev.deltaY);
     });
-  
+   
     function move_slider(amount) {
       s_pos -= amount;
       if (s_pos < s_move_max) {
@@ -441,7 +441,7 @@ $(document).ready(function () {
    let windowWidth = window.innerWidth;
    let maxSliderMove = (sliderWidth - (windowWidth / 2)) * -1;
    let sliderPosition = 0;
- 
+   
    sliderContainer.addEventListener('wheel', function (ev) {
      ev.preventDefault();
      if (ev.deltaY < 0 && sliderPosition >= 0) {
@@ -452,7 +452,7 @@ $(document).ready(function () {
      }
      moveSlider(ev.deltaY);
    });
- 
+   
    function moveSlider(amount) {
      sliderPosition -= amount;
      if (sliderPosition < maxSliderMove) {
@@ -468,17 +468,17 @@ $(document).ready(function () {
               // 스크롤이 왼쪽 또는 오른쪽 끝에 도달했는지 확인
               const atLeftEnd = (el.scrollLeft === 0);
               const atRightEnd = (el.scrollLeft + el.offsetWidth >= el.scrollWidth);
-  
+   
               // 휠 이벤트가 위로 가는 것인지 아래로 가는 것인지 확인
               const scrollingUp = (e.deltaY < 0);
               const scrollingDown = (e.deltaY > 0);
-  
+   
               if ((atLeftEnd && scrollingUp) || (atRightEnd && scrollingDown)) {
                   // 스크롤이 양 끝에 있고 사용자가 해당 방향으로 계속 스크롤하려고 하면,
                   // 이벤트의 기본 동작을 수행하여 수직 스크론을 허용합니다.
                   return;
               }
-  
+   
               // 그렇지 않으면, 가로 스크롤을 진행합니다.
               e.preventDefault();
               // noinspection JSSuspiciousNameCombination
@@ -487,32 +487,32 @@ $(document).ready(function () {
       });
   } */
   /* 안씀 document.querySelectorAll("#scroll").forEach(el => {
-
+  
     let isScrolling = false;
     let scrollTarget = 0;
-
+  
   el.addEventListener("wheel", e => {
     e.preventDefault();
-
+  
     const delta = e.deltaY;
     scrollTarget += delta;
-
+  
     if (!isScrolling) {
       requestAnimationFrame(function animateScroll() {
         el.scrollLeft += (scrollTarget - el.scrollLeft) * 0.1;
         isScrolling = Math.abs(scrollTarget - el.scrollLeft) > 0.5;
-
+  
         if (isScrolling) {
           requestAnimationFrame(animateScroll);
         }
       });
     }
   });
-}); */
+  }); */
   /*   $(".wpContent").mouseenter(function () {
       $(this).css("backgroundPosition", "0 100%");
     });
-  
+   
     $(".wpContent").mouseleave(function () {
       $(this).css("backgroundPosition", "0 0");
     }); */
