@@ -396,9 +396,12 @@ nav {
   transform: scale(1.5);
 }
 
-.hm3,
-.hm4 {
+.hm3 {
   top: 80px;
+}
+
+.hm4 {
+  top: 100px;
 }
 
 .hm5 {
@@ -990,14 +993,14 @@ h3 {
 }
 
 .wpContentsList {
-  width: 1264px;
+  width: 1259px;
   height: 750px;
 }
 
 .wpContentsList .wpContents {
-  border: 1px solid #000;
   width: 100%;
   height: 100%;
+  padding: 10px 15px;
   margin: 10px auto 0;
   background-color: #f2dabb;
 }
@@ -1005,36 +1008,11 @@ h3 {
 .wpContents .wpContent {
   width: 100%;
   height: 600px;
-  /* overflow-y: auto; */
-  /* overflow-x: hidden; */
 }
 
 .wpContent video {
   width: 100%;
   height: 100%;
-}
-
-/* .wpContent>img {
-  width: calc(1400px - 12px);
-  height: auto;
-  object-fit: cover;
-  object-position: top;
-} */
-
-.wpContent::-webkit-scrollbar {
-  width: 12px;
-}
-
-/* 스크롤 움직이는 바 */
-.wpContent::-webkit-scrollbar-thumb {
-  height: 25%;
-  background-color: #3BA375;
-  border-radius: 10px;
-}
-
-/* 스크롤바 뒷배경 */
-.wpContent::-webkit-scrollbar-track {
-  background-color: rgba(181, 198, 222, 0.2);
 }
 
 .wpContents .wpConTextList {
@@ -1049,13 +1027,11 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-right: 60px;
+  padding-right: 40px;
 }
 
 .wpConText .wpTextTitle {
-  width: 320px;
-  height: 90%;
-  padding: 0 60px;
+  padding-left: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1077,14 +1053,11 @@ h3 {
 
 .wpTextContent {
   display: flex;
-  align-items: center;
+  padding-top: 15px;
 }
 
-.wpText2 {
-  margin-right: 60px;
-}
-
-.wpText2:nth-of-type(1) {
+.wpText2:first-child {
+  margin-right: 40px;
   margin-bottom: 18px;
 }
 
@@ -1108,7 +1081,7 @@ h3 {
 }
 
 .wpText3 {
-  margin-top: 23px;
+  margin-top: 35px;
 }
 
 .wpText3 .wpTextinner {
@@ -1155,6 +1128,42 @@ h3 {
   background-color: #3BA375;
 }
 
+/* 모달창 */
+.wpConTextModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow-y: scroll;
+  z-index: 9999;
+  display: none;
+}
+
+.wpConTextPop {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1200px;
+  height: 100%;
+}
+
+.wpConTextPop img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.wpConTextPopClose {
+  position: fixed;
+  top: 20px;
+  right: 35px;
+  font-size: 36px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 9999;
+}
 
 
 /* Section_ResponsiveWeb*/
@@ -1471,7 +1480,42 @@ h3 {
   transform: rotate(45deg);
 }
 
+/* 모달창 */
+.resModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow-y: scroll;
+  z-index: 9999;
+  display: none;
+}
 
+.resModalInner {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1200px;
+  height: 100%;
+}
+
+.resPop img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.resClose {
+  position: fixed;
+  top: 20px;
+  right: 35px;
+  font-size: 36px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 9999;
+}
 
 
 
@@ -1618,7 +1662,7 @@ h3 {
   border-radius: 12px;
 }
 
-.imbtn6Btn {
+.imbtnImBtn {
   position: absolute;
   top: -65px;
   right: 0;
@@ -1634,29 +1678,41 @@ h3 {
   border-radius: 8px;
 }
 
-.imbtn6Btn a {
+.imbtnImBtn a {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-.imbtn6Btn:hover {
+.imbtnImBtn:hover {
   background-color: rgba(38, 160, 94, 0.8);
 }
 
-.wplView {
-  position: absolute;
-  top: 0;
+.wplViewList {
+  position: relative;
+  top: 50px;
   right: 0;
+  width: 500px;
+  height: 720px;
+  background-color: red;
+}
+
+.wplView {
+
   width: 500px;
   height: 720px;
   border: 10px solid #3BA375;
   border-radius: 10px;
   margin-left: 50px;
   overflow: auto;
+  display: none;
 }
 
 .wplView>img {
   width: 100%;
   object-fit: cover;
+}
+
+.wplView.active {
+  display: block;
 }

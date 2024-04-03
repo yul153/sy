@@ -517,19 +517,34 @@ $(document).ready(function () {
       $(this).css("backgroundPosition", "0 0");
     }); */
 
+  /* 슬릭슬라이더 */
   $('.wpContentsList').slick({
     arrows: true,
     speed: 500,
   });
 
-  $(".slick-prev").click(function () {
-    $('.wpContent').animate({ scrollTop: 0 }, 1000);
+  /* 어바웃디자인 모달창 */
+  $(".wpViewAboutBtn1").click(function () {
+    wheel = false;
+    $("html").css({ "overflow-y": "hidden" });
+    $(".wpConTextModal1").fadeIn();
+  });
+  $(".wpViewAboutBtn2").click(function () {
+    wheel = false;
+    $("html").css({ "overflow-y": "hidden" });
+    $(".wpConTextModal2").fadeIn();
+  });
+  $(".wpViewAboutBtn3").click(function () {
+    wheel = false;
+    $("html").css({ "overflow-y": "hidden" });
+    $(".wpConTextModal3").fadeIn();
   });
 
-  $(".slick-next").click(function () {
-    $('.wpContent').animate({ scrollTop: 0 }, 1000);
+  $(".wpConTextPopClose, .wpConTextModal").click(function () {
+    wheel = true;
+    $("html").css({ "overflow-y": "scroll" });
+    $(".wpConTextModal").fadeOut();
   });
-
 
   /* Responsive Web____________________________________ */
   $(".up").mouseenter(function () {
@@ -540,15 +555,15 @@ $(document).ready(function () {
     $(this).css("backgroundPosition", "0 0");
   });
 
-  $(".btnView").click(function () {//각 메뉴를 클릭했을때
-    $(this).next().show(); //다음 형제인 .pop을 보이게함
-    $("html").css({ overflowY: "hidden" });//body스크롤없앰
+  $(".btnView").click(function () {
+    $(this).next().show();
+    $("html").css({ "overflow-y": "hidden" });
     return false;
   });
 
-  $(".resPopClose").click(function () {//close눌렀을때
-    $(".resPop").hide(); //.pop을 안보이게함
-    $("html").css({ "overflow-y": "scroll" });//body스크롤생김	
+  $(".resPopClose").click(function () {
+    $(".resPop").hide();
+    $("html").css({ "overflow-y": "scroll" });
   });
 
   // 검정 배경 클릭시 닫기
@@ -557,7 +572,18 @@ $(document).ready(function () {
     $(".resPop").hide();
   });
 
+  /* about modal */
+  $(".resAboutBtn").click(function () {
+    wheel = false;
+    $("html").css({ "overflow-y": "hidden" });
+    $(".resModal").fadeIn();
+  });
 
+  $(".resClose, .resModal").click(function () {
+    wheel = true;
+    $("html").css({ "overflow-y": "scroll" });
+    $(".resModal").fadeOut();
+  });
 
   /* Web Planning____________________________________ */
   // 웹기획 메인탭메뉴
@@ -568,23 +594,39 @@ $(document).ready(function () {
     let tabId = $(this).attr("data-wpl");
     $(".wplcontentList li").removeClass("active");
     $("#" + tabId).addClass("active").fadeIn();
+
+    $(".wplImage>li").animate({ scrollTop: 0 }, 300);
   });
 
   //해당 탭메뉴를 클릭할때 해당 첫 썸네일을 클릭시킴
   $(".wplTab>li:first-child").click(function () {
-    $(".wplContent1 .wplMenu li:first-child").click();
+    $(".wplContent1 .wplMenu p:first-child").click();
   });
   $(".wplTab>li:nth-child(2)").click(function () {
-    $(".wplContent2 .wplMenu li:first-child").click();
+    $(".wplContent2 .wplMenu p:first-child").click();
   });
   $(".wplTab>li:nth-child(3)").click(function () {
-    $(".wplContent3 .wplMenu li:first-child").click();
+    $(".wplContent3 .wplMenu p:first-child").click();
   });
   $(".wplTab>li:nth-child(4)").click(function () {
-    $(".wplContent4 .wplMenu li:first-child").click();
+    $(".wplContent4 .wplMenu p:first-child").click();
   });
 
   //탭메뉴별 이미지갤러리
+  $(".wplImage li").mouseenter(function () {
+    wheel = false;
+  });
+
+  $(".wplImage li").mouseleave(function () {
+    wheel = true;
+  });
+  $(".wplView").mouseenter(function () {
+    wheel = false;
+  });
+
+  $(".wplView").mouseleave(function () {
+    wheel = true;
+  });
 
   //tab-1
   let wploldidxA = 0;
@@ -603,6 +645,8 @@ $(document).ready(function () {
   $(".wplContent1 .wplMenu p").click(function () {
     wplidxA = $(this).index();
     wplImgA(wplidxA)
+
+    $(".wplImage>li").animate({ scrollTop: 0 }, 300);
   });
 
   //tab-2
@@ -622,6 +666,8 @@ $(document).ready(function () {
   $(".wplContent2 .wplMenu p").click(function () {
     wplidxB = $(this).index();
     wplImgB(wplidxB)
+
+    $(".wplImage>li").animate({ scrollTop: 0 }, 500);
   });
 
   //tab-3
@@ -641,6 +687,8 @@ $(document).ready(function () {
   $(".wplContent3 .wplMenu p").click(function () {
     wplidxC = $(this).index();
     wplImgC(wplidxC)
+
+    $(".wplImage>li").animate({ scrollTop: 0 }, 300);
   });
 
   //tab-4
@@ -651,16 +699,19 @@ $(document).ready(function () {
     if (wploldidxD != wplidxD) {
       $(".wplContent4 .wplMenu p").eq(wploldidxD).css({ "color": "#333", "background-color": "#f2dabb" });
       $(".wplContent4 .wplMenu p").eq(wplidxD).css({ "color": "#fff", "background-color": "#0086aa" });
-      $(".wplContent4 .wplImage li").eq(wploldidxD).stop().fadeOut(100);
-      $(".wplContent4 .wplImage li").eq(wplidxD).stop().fadeIn(100);
     };
     wploldidxD = wplidxD;
+
   };
 
   $(".wplContent4 .wplMenu p").click(function () {
     wplidxD = $(this).index();
     wplImgD(wplidxD)
+
+    $(".wplImage>li").animate({ scrollTop: 0 }, 300);
   });
+
+
 });
 
 
