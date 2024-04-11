@@ -6,36 +6,52 @@ $(document).ready(function () {
 
   /*브라우저 창 사이즈 변경시___________ */
   $(window).resize(function () {
-    location.reload();  //새로고침
-    let wh = $(window).height();
+    // location.reload();
+    wh = $(window).height();
     $("html,body").stop().animate({ scrollTop: wh * a }, 500);
   });
 
   /* 인디케이터, gnb, 홈메뉴 클릭시______________________ */
-  $(".mainIndicator>p, #gnb>li, .home_menu>li").click(function () {
+  $(".mainIndicator p, #gnb>li").click(function () {
     let num = $(this).index();
-    $(".mainIndicator>p").eq(num).addClass("active");
-    $(".mainIndicator>p").eq(num).siblings().removeClass("active");
+    $(".mainIndicator p").eq(num).addClass("active");
+    $(".mainIndicator p").eq(num).siblings().removeClass("active");
     $("#gnb>li").eq(num).addClass("active");
     $("#gnb>li").eq(num).siblings().removeClass("active");
-    $(".home_menu>li").eq(num).addClass("active");
-    $(".home_menu>li").eq(num).siblings().removeClass("active");
 
     $("html,body").stop().animate({ scrollTop: wh * num }, 500);
   });
 
+  $(".home_menu ul li").click(function () {
+    let num = $(this).index() + 1;
+    $(".mainIndicator p").eq(num).addClass("active");
+    $(".mainIndicator p").eq(num).siblings().removeClass("active");
+    $("#gnb>li").eq(num).addClass("active");
+    $("#gnb>li").eq(num).siblings().removeClass("active");
+
+    $("html,body").stop().animate({ scrollTop: wh * num }, 500);
+  });
+
+  $(".topBtn").click(function () {
+    $(".gnb li:first-child").addClass("active").siblings().removeClass("active");
+    $(".mainIndicator .mi1").addClass("active").siblings().removeClass("active");
+
+    let num = $(".home").offset().top;
+    $("html,body").stop().animate({ scrollTop: num }, 500);
+  });
+
   /* 마우스휠__________________________ */
-  let a = 0;  //페이지번호
-  let area_n = $(".area").length;  //섹션개수
+  let a = 0;
+  let area_n = $(".area").length;
   let wheel = true;
 
   $(".area").on("mousewheel DOMMouseScroll", function (e, delta) {
     if (wheel) {
       let n = $(this).index();
 
-      if (delta < 0) { //휠을 아래로 돌렸다면
+      if (delta < 0) {
         a = n + 1;
-      } else { //휠을 위로 돌렸다면
+      } else {
         a = n - 1;
       }
 
@@ -50,12 +66,6 @@ $(document).ready(function () {
     }
   });
 
-  $(".wpContent").on("mouseenter DOMMouseScroll", function () {
-    wheel = false;
-  });
-  $(".wpContent").on("mouseleave DOMMouseScroll", function () {
-    wheel = true;
-  });
   $(".wplImage").on("mouseenter DOMMouseScroll", function () {
     wheel = false;
   });
@@ -68,7 +78,15 @@ $(document).ready(function () {
   $(window).scroll(function () {
     let sc = $(document).scrollTop();
 
-    //한영역 높이가 wh임 
+    // 헤더 보이기
+    let hd = $(window).scrollTop();
+
+    if (hd < 700) {
+      $("header").addClass('active');
+    } else {
+      $("header").removeClass('active');
+    };
+
     if ((sc >= 0) && (sc < wh)) {
       a = 0;
     };
@@ -91,15 +109,6 @@ $(document).ready(function () {
 
     if (sc >= wh * 5) {
       a = 5;
-    };
-
-    // 헤더 보이기
-    let hd = $(window).scrollTop();
-
-    if (hd < 700) {
-      $("header").addClass('active');
-    } else {
-      $("header").removeClass('active');
     };
   });
 
@@ -364,159 +373,6 @@ $(document).ready(function () {
 
 
   /* Web Publishing____________________________________ */
-  /* 안씀 const wpContent = document.querySelector('.wpContentsList');
-  const wpContentTimeline = document.querySelector('.wpContentsWrapper');
-   
-  wpContent.animate(
-    [
-      { transform: 'translateX(0)'},
-      { transform: 'translateX(calc(-100% + 100vw))'}
-    ],
-    {
-      fill: 'both',
-      timeline: new ScrollTimeline({
-        scrollOffsets: [
-          { target: wpContentTimeline, edge: 'start', threshold: 1 },
-          { target: wpContentTimeline, edge: 'end', threshold: 1 }
-        ]
-      })
-    }
-  ); */
-  /*  안씀 let container = $("#scroll");
-    let boxes = $(".wpContents");
-    let currentIndex = 0;
-   
-    $(window).on("wheel", function (event) {
-      event.preventDefault();
-      let deltah = event.originalEvent.daltaY;
-   
-      if (deltah > 0 && currentIndex < boxes.length - 1) {
-        currentIndex++;
-      } else if (deltah < 0 && currentIndex > 0) {
-        currentIndex--;
-      }
-   
-      let scrollTo = currentIndex * $(window).width();
-      container.animate({ scrollLeft: scrollTo }, 500);
-    });
-   
-    $(window).on("resize", function () {
-      let scrollTo = currentIndex * $(window).width();
-      container.scrollLeft(scrollTo);
-    });
-   */
-  /*  안씀 const cont_2 = document.querySelector('.wpContentsWrapper');
-    const slider = document.getElementById('scroll');
-    const s_wid = slider.offsetWidth;
-    let win_wid = window.innerWidth;
-    let s_move_max = (s_wid - (win_wid / 2)) * -1;
-    let s_pos = 0;
-   
-    cont_2.addEventListener('wheel', function (ev) {
-      ev.preventDefault;
-      if (ev.deltaY < 0 && s_pos >= 0) {
-        setTimeout(() => {
-          cont_2.style.top = `100%`;
-        }, 500);
-        return;
-      }
-      move_slider(ev.deltaY);
-    });
-   
-    function move_slider(amount) {
-      s_pos -= amount;
-      if (s_pos < s_move_max) {
-        s_pos = s_move_max;
-        return;
-      } else if (s_pos > 0) {
-        s_pos = 0;
-        return;
-      }
-      slider.style.transform = `translateX(${s_pos}px)`;
-      li_upDown(amount);
-    } */
-  /* 안씀 const sliderContainer = document.querySelector('.wpContentsWrapper');
-   const slider = document.getElementById('scroll');
-   const sliderWidth = slider.offsetWidth;
-   let windowWidth = window.innerWidth;
-   let maxSliderMove = (sliderWidth - (windowWidth / 2)) * -1;
-   let sliderPosition = 0;
-   
-   sliderContainer.addEventListener('wheel', function (ev) {
-     ev.preventDefault();
-     if (ev.deltaY < 0 && sliderPosition >= 0) {
-       setTimeout(() => {
-         sliderContainer.style.top = `100%`;
-       }, 500);
-       return;
-     }
-     moveSlider(ev.deltaY);
-   });
-   
-   function moveSlider(amount) {
-     sliderPosition -= amount;
-     if (sliderPosition < maxSliderMove) {
-       sliderPosition = maxSliderMove;
-     } else if (sliderPosition > 0) {
-       sliderPosition = 0;
-     }
-     slider.style.transform = `translateX(${sliderPosition}px)`;
-   }; */
-  /* 안씀   export default function initHorizontalScroll() {
-      document.querySelectorAll(".wpContentsList").forEach(el => {
-          el.addEventListener("wheel", e => {
-              // 스크롤이 왼쪽 또는 오른쪽 끝에 도달했는지 확인
-              const atLeftEnd = (el.scrollLeft === 0);
-              const atRightEnd = (el.scrollLeft + el.offsetWidth >= el.scrollWidth);
-   
-              // 휠 이벤트가 위로 가는 것인지 아래로 가는 것인지 확인
-              const scrollingUp = (e.deltaY < 0);
-              const scrollingDown = (e.deltaY > 0);
-   
-              if ((atLeftEnd && scrollingUp) || (atRightEnd && scrollingDown)) {
-                  // 스크롤이 양 끝에 있고 사용자가 해당 방향으로 계속 스크롤하려고 하면,
-                  // 이벤트의 기본 동작을 수행하여 수직 스크론을 허용합니다.
-                  return;
-              }
-   
-              // 그렇지 않으면, 가로 스크롤을 진행합니다.
-              e.preventDefault();
-              // noinspection JSSuspiciousNameCombination
-              el.scrollLeft += e.deltaY;
-          })
-      });
-  } */
-  /* 안씀 document.querySelectorAll("#scroll").forEach(el => {
-  
-    let isScrolling = false;
-    let scrollTarget = 0;
-  
-  el.addEventListener("wheel", e => {
-    e.preventDefault();
-  
-    const delta = e.deltaY;
-    scrollTarget += delta;
-  
-    if (!isScrolling) {
-      requestAnimationFrame(function animateScroll() {
-        el.scrollLeft += (scrollTarget - el.scrollLeft) * 0.1;
-        isScrolling = Math.abs(scrollTarget - el.scrollLeft) > 0.5;
-  
-        if (isScrolling) {
-          requestAnimationFrame(animateScroll);
-        }
-      });
-    }
-  });
-  }); */
-  /*   $(".wpContent").mouseenter(function () {
-      $(this).css("backgroundPosition", "0 100%");
-    });
-   
-    $(".wpContent").mouseleave(function () {
-      $(this).css("backgroundPosition", "0 0");
-    }); */
-
   /* 슬릭슬라이더 */
   $('.wpContentsList').slick({
     arrows: true,
@@ -566,7 +422,6 @@ $(document).ready(function () {
     $("html").css({ "overflow-y": "scroll" });
   });
 
-  // 검정 배경 클릭시 닫기
   $(".resPop").click(function () {
     $("html").css({ "overflow-y": "scroll" });
     $(".resPop").hide();
@@ -595,10 +450,13 @@ $(document).ready(function () {
     $(".wplcontentList li").removeClass("active");
     $("#" + tabId).addClass("active").fadeIn();
 
+    let wplview = $(".wplView").index();
+    $(".wplView").removeClass("active");
+    $("." + wplview).addClass("active").fadeIn();
+
     $(".wplImage>li").animate({ scrollTop: 0 }, 300);
   });
 
-  //해당 탭메뉴를 클릭할때 해당 첫 썸네일을 클릭시킴
   $(".wplTab>li:first-child").click(function () {
     $(".wplContent1 .wplMenu p:first-child").click();
   });
@@ -699,9 +557,10 @@ $(document).ready(function () {
     if (wploldidxD != wplidxD) {
       $(".wplContent4 .wplMenu p").eq(wploldidxD).css({ "color": "#333", "background-color": "#f2dabb" });
       $(".wplContent4 .wplMenu p").eq(wplidxD).css({ "color": "#fff", "background-color": "#0086aa" });
+      $(".wplContent4 .wplImage li").eq(wploldidxD).stop().fadeOut(100);
+      $(".wplContent4 .wplImage li").eq(wplidxD).stop().fadeIn(100);
     };
     wploldidxD = wplidxD;
-
   };
 
   $(".wplContent4 .wplMenu p").click(function () {
@@ -712,6 +571,29 @@ $(document).ready(function () {
   });
 
 
+  /* wpl view scroll */
+  $(".up").mouseenter(function () {
+    $(this).css("backgroundPosition", "0 100%");
+  });
+  $(".wplPcImImg").mouseleave(function () {
+    $(this).css("backgroundPosition", "0 0");
+  });
+
+  /* popup */
+  $(".wplAboutBtn").click(function () {
+    wheel = false;
+    $(".wplAboutPopbg").stop().fadeIn();
+
+    $("html").css("overflow-y", "hidden");
+  });
+
+  $(".wplClose").click(function () {
+    wheel = true;
+    $('.wplAboutPopbg').animate({ scrollTop: 0 }, 100, function () {
+      $(".wplAboutPopbg").stop().fadeOut();
+      $("html").css("overflow-y", "scroll");
+    });
+  });
 });
 
 

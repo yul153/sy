@@ -103,7 +103,7 @@ img {
   transform: translateY(-50%);
   width: 135px;
   height: 20px;
-  font-size: 12px;
+  font-size: 11px;
   text-align: right;
   text-transform: uppercase;
   color: #0086aa;
@@ -114,24 +114,22 @@ img {
 
 .mainIndicator .topBtn {
   width: 20px;
-  height: 50px;
-  line-height: 50px;
+  height: 40px;
   text-align: center;
-  border-top: 1px solid #333;
-  background-color: transparent;
+  line-height: 20px;
+  color: #0086aa;
+  padding-top: 5px;
   display: flex;
   flex-direction: column;
 }
 
 .topBtn i {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .topBtn span {
   font-size: 12px;
-
 }
-
 
 .mainIndicator p:hover span {
   opacity: 1;
@@ -197,8 +195,6 @@ nav {
 #home {
   width: 100vw;
   height: 100vh;
-  /* background-color: blue; */
-  /*   background: linear-gradient(120deg, #FCFAF5 0%, #fcf7f0 100%); */
 }
 
 .home_inner {
@@ -324,10 +320,18 @@ nav {
 
 /* 메뉴버튼 */
 .home_menu {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+}
+
+.home_menu ul {
   display: flex;
 }
 
-.home_menu li {
+.home_menu ul li {
   position: relative;
   width: 200px;
   height: 30vh;
@@ -338,11 +342,11 @@ nav {
   z-index: 5;
 }
 
-.home_menu li:first-child {
+.home_menu ul li:first-child {
   border-left: 1px solid #0086aa;
 }
 
-.home_menu li span {
+.home_menu ul li span {
   position: absolute;
   top: 20px;
   left: 20px;
@@ -354,7 +358,7 @@ nav {
   opacity: 0;
 }
 
-.home_menu li a {
+.home_menu ul li a {
   display: block;
   width: 200px;
   height: 30vh;
@@ -364,7 +368,7 @@ nav {
   padding-top: 60px;
 }
 
-.home_menu li a:before {
+.home_menu ul li a:before {
   content: '\e90b';
   font-family: xeicon;
   position: absolute;
@@ -376,7 +380,7 @@ nav {
   opacity: 0;
 }
 
-.home_menu li img {
+.home_menu ul li img {
   position: absolute;
   width: 100%;
   object-fit: cover;
@@ -385,7 +389,7 @@ nav {
   z-index: -1;
 }
 
-.home_menu li .hm1 {
+.home_menu ul li .hm1 {
   top: 85px;
   left: 0;
 }
@@ -414,20 +418,20 @@ nav {
   opacity: 1;
 }
 
-.home_menu li:hover {
+.home_menu ul li:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.home_menu li:hover>span {
+.home_menu ul li:hover>span {
   opacity: 1;
 }
 
-.home_menu li a:hover:before {
+.home_menu ul li a:hover:before {
   opacity: 1;
   top: 230px;
 }
 
-.home_menu li:hover>img {
+.home_menu ul li:hover>img {
   opacity: 1;
 }
 
@@ -512,7 +516,6 @@ h3 {
 #profile {
   width: 100vw;
   height: 100vh;
-  /* background-color: #FFCCBC; */
 }
 
 .profileInner {
@@ -617,8 +620,6 @@ h3 {
 .profileTexts .profileText {
   width: auto;
   height: auto;
-  /* border-top: 1px solid #666; */
-  /* padding: 10px 10px 0 10px; */
 }
 
 .profileText h3 {
@@ -1562,7 +1563,7 @@ h3 {
 
 .wplcontentList {
   position: relative;
-  width: calc(130px + 1030px + 12px + 550px);
+  width: calc(130px + 1030px + 520px + 12px);
   height: 720px;
   margin: 0 50px 0 50px;
 }
@@ -1584,6 +1585,7 @@ h3 {
   width: 1170px;
   height: 700px;
   display: flex;
+  justify-content: space-between;
 }
 
 .wplMenu {
@@ -1662,11 +1664,12 @@ h3 {
   border-radius: 12px;
 }
 
-.imbtnImBtn {
+/* about, site btn */
+.wplbtnBtn {
   position: absolute;
   top: -65px;
   right: 0;
-  width: 140px;
+  width: auto;
   height: 50px;
   font-size: 18px;
   font-weight: 400;
@@ -1674,45 +1677,328 @@ h3 {
   text-align: center;
   text-transform: uppercase;
   line-height: 50px;
+  display: flex;
+  gap: 10px;
+}
+
+.wplbtnBtn a {
+  display: block;
+  width: 150px;
+  height: 100%;
   background-color: #3BA375;
   border-radius: 8px;
+  padding: 0 10px;
 }
 
-.imbtnImBtn a {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.imbtnImBtn:hover {
+.wplbtnBtn a:hover {
   background-color: rgba(38, 160, 94, 0.8);
 }
 
-.wplViewList {
-  position: relative;
-  top: 50px;
+/* imstudio pc img scroll */
+.wplPcIm {
+  position: absolute;
+  top: 50%;
   right: 0;
+  transform: translateY(-50%);
   width: 500px;
-  height: 720px;
-  background-color: red;
+  height: 448px;
+  background: url(../img/webplanning/imstudio/iMacMockup.png) no-repeat;
+  background-size: cover;
+  background-position: center top;
+  transition: all 0.7s;
+  z-index: 50;
 }
 
-.wplView {
+.wplPcImImg {
+  position: absolute;
+  top: 13px;
+  right: 14px;
+  width: 471px;
+  height: 264px;
+  background: url(../img/webplanning/imstudio/viewpage_allpage.jpg) no-repeat;
+  background-size: cover;
+  background-position: center top;
+  transition: all 3s;
+  z-index: 51;
+}
 
-  width: 500px;
-  height: 720px;
-  border: 10px solid #3BA375;
-  border-radius: 10px;
-  margin-left: 50px;
-  overflow: auto;
+/* imstudio popup */
+.wplAboutPopbg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow-y: scroll;
+  z-index: 9999;
   display: none;
 }
 
-.wplView>img {
-  width: 100%;
-  object-fit: cover;
+.wplAboutPop {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
 }
 
-.wplView.active {
-  display: block;
+/* yoger multi device scroll */
+.wplPcYo {
+  position: absolute;
+  top: 200px;
+  right: 30px;
+  width: 400px;
+  height: 244px;
+  background: url(../img/webplanning/yogerpresso/mockup_pc.png) no-repeat;
+  background-size: cover;
+  background-position: center top;
+  transition: all 0.7s;
+  z-index: 50;
+}
+
+.wplPcYoImg {
+  position: absolute;
+  top: 6px;
+  right: 36px;
+  width: 327px;
+  height: 211px;
+  background: url(../img/webplanning/yogerpresso/yoger_PC1200.png) no-repeat;
+  background-size: cover;
+  background-position: center top;
+  transition: all 3s;
+  z-index: 51;
+}
+
+.wplTbYo {
+  position: absolute;
+  top: 300px;
+  right: 300px;
+  width: 200px;
+  height: 259px;
+  background: url(../img/webplanning/yogerpresso/mockup_tbl.png) no-repeat;
+  background-size: cover;
+  background-position: center top;
+  transition: all 0.7s;
+  z-index: 50;
+}
+
+.wplTbYoImg {
+  position: absolute;
+  top: 8px;
+  right: 9px;
+  width: 183px;
+  height: 243px;
+  background: url(../img/webplanning/yogerpresso/yoger_Tablet768.jpg) no-repeat;
+  background-size: cover;
+  background-position: center top;
+  transition: all 3s;
+  z-index: 51;
+}
+
+.wplMoYo {
+  position: absolute;
+  top: 300px;
+  right: 0;
+  width: 99px;
+  height: 200px;
+  background: url(../img/webplanning/yogerpresso/mockup_mo.png) no-repeat;
+  background-size: cover;
+  background-position: center top;
+  transition: all 0.7s;
+  z-index: 50;
+}
+
+.wplMoYoImg {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  width: 88px;
+  height: 192px;
+  border-radius: 10px;
+  background: url(../img/webplanning/yogerpresso/yoger_Mobile360.jpg) no-repeat;
+  background-size: cover;
+  background-position: center top;
+  transition: all 3s;
+  z-index: 51;
+}
+
+/* webtrend multi device scroll */
+.wplPcWt {
+  position: absolute;
+  top: 200px;
+  right: 30px;
+  width: 400px;
+  height: 244px;
+  background: url(../img/webplanning/webtrend/mockup_pc.png) no-repeat;
+  background-size: cover;
+  background-position: center top;
+  transition: all 0.7s;
+  z-index: 50;
+}
+
+.wplPcWtImg {
+  position: absolute;
+  top: 6px;
+  right: 36px;
+  width: 327px;
+  height: 211px;
+  background: url(../img/webplanning/webtrend/scroll_pc.png) no-repeat;
+  background-size: cover;
+  background-position: center top;
+  transition: all 3s;
+  z-index: 51;
+}
+
+.wplTbWt {
+  position: absolute;
+  top: 300px;
+  right: 300px;
+  width: 200px;
+  height: 259px;
+  background: url(../img/webplanning/webtrend/mockup_tbl.png) no-repeat;
+  background-size: cover;
+  background-position: center top;
+  transition: all 0.7s;
+  z-index: 50;
+}
+
+.wplTbWtImg {
+  position: absolute;
+  top: 8px;
+  right: 9px;
+  width: 183px;
+  height: 243px;
+  background: url(../img/webplanning/webtrend/scroll_tb.png) no-repeat;
+  background-size: cover;
+  background-position: center top;
+  transition: all 3s;
+  z-index: 51;
+}
+
+.wplMoWt {
+  position: absolute;
+  top: 300px;
+  right: 0;
+  width: 99px;
+  height: 200px;
+  background: url(../img/webplanning/webtrend/mockup_mo.png) no-repeat;
+  background-size: cover;
+  background-position: center top;
+  transition: all 0.7s;
+  z-index: 50;
+}
+
+.wplMoWtImg {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  width: 88px;
+  height: 192px;
+  border-radius: 10px;
+  background: url(../img/webplanning/webtrend/scroll_mo.png) no-repeat;
+  background-size: cover;
+  background-position: center top;
+  transition: all 3s;
+  z-index: 51;
+}
+
+/* thehaam mobile scroll */
+.wplmoth {
+  position: absolute;
+  width: 110px;
+  height: 226px;
+  background: url(../img/webplanning/thehaam/mockup_iphone15.png) no-repeat;
+  background-size: cover;
+  background-position: center top;
+  transition: all 0.7s;
+  z-index: 50;
+}
+
+.wplmoth1 {
+  top: 50%;
+  right: 380px;
+  transform: translateY(-50%);
+}
+
+.wplmoth2 {
+  top: 120px;
+  right: 260px;
+}
+
+.wplmoth3 {
+  top: 356px;
+  right: 260px;
+}
+
+.wplmoth4 {
+  top: 120px;
+  right: 140px;
+}
+
+.wplmoth5 {
+  top: 356px;
+  right: 140px;
+}
+
+.wplmoth6 {
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+
+}
+
+.wplMothImg {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 102px;
+  height: 217px;
+  border-radius: 14px;
+  transition: all 3s;
+  z-index: 51;
+}
+
+.wplMothImg1 {
+  background: url(../img/webplanning/thehaam/thehaam_intro.png) no-repeat;
+  background-size: cover;
+  background-position: center top;
+}
+
+.wplMothImg2 {
+  background: url(../img/webplanning/thehaam/thehaam_main.png) no-repeat;
+  background-size: cover;
+  background-position: center top;
+}
+
+.wplMothImg3 {
+  background: url(../img/webplanning/thehaam/thehaam_product.png) no-repeat;
+  background-size: cover;
+  background-position: center top;
+}
+
+.wplMothImg4 {
+  background: url(../img/webplanning/thehaam/thehaam_productInner.png) no-repeat;
+  background-size: cover;
+  background-position: center top;
+}
+
+.wplMothImg5 {
+  background: url(../img/webplanning/thehaam/thehaam_live.png) no-repeat;
+  background-size: cover;
+  background-position: center top;
+}
+
+.wplMothImg6 {
+  background: url(../img/webplanning/thehaam/thehaam_cs.png) no-repeat;
+  background-size: cover;
+  background-position: center top;
+}
+
+.wplClose {
+  position: fixed;
+  top: 20px;
+  right: 35px;
+  font-size: 36px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 9999;
 }
