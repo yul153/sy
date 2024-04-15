@@ -273,9 +273,9 @@ nav {
 /* 재생막대 */
 .home_rod {
   position: relative;
-  top: 90px;
-  left: 1365px;
-  width: 180px;
+  top: 55px;
+  left: 1310px;
+  width: 300px;
   height: 4px;
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 1px;
@@ -438,8 +438,8 @@ nav {
 /* 재생스탑좌우버튼 */
 .home_btn_list {
   position: absolute;
-  bottom: 36px;
-  right: 298px;
+  bottom: 30px;
+  right: 390px;
   display: flex;
   height: 50px;
   align-items: center;
@@ -457,7 +457,11 @@ nav {
 }
 
 .home_left_btn {
-  padding-right: 185px;
+  padding-right: 10px;
+}
+
+.home_right_btn {
+  padding-left: 10px;
 }
 
 .home_play_stop {
@@ -699,6 +703,10 @@ h3 {
   border-radius: 30px 0 0 30px;
   transform-origin: left;
   will-change: transform;
+}
+
+.skillGraph .sGraph2 {
+  width: calc(180 * 0.8px);
 }
 
 .skillGraph70 .sGraph {
