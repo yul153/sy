@@ -6,6 +6,7 @@ $(document).ready(function () {
 
   /*브라우저 창 사이즈 변경시___________ */
   $(window).resize(function () {
+    location.reload();
     wh = $(window).height();
     $("html,body").stop().animate({ scrollTop: wh * a }, 500);
   });
