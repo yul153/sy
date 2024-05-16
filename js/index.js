@@ -526,6 +526,19 @@ $(document).ready(function () {
     wplImgB(wplidxB)
 
     $(".wplImage>li").animate({ scrollTop: 0 }, 500);
+
+    /* modal */
+    $(".wplImage04").click(function () {
+      wheel = false;
+      $(".wplImage04_pop").stop().fadeIn();
+      $("html").css("overflow-y", "hidden");
+    });
+
+    $(".wplClose").click(function () {
+      wheel = true;
+      $(".wplImage04_pop").stop().fadeOut();
+      $("html").css("overflow-y", "scroll");
+    });
   });
 
   //tab-3

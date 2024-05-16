@@ -1652,6 +1652,35 @@ h3 {
   display: block;
 }
 
+/* yoga result modal */
+.wplImage04 {
+  cursor: pointer;
+}
+
+.wplImage04_pop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: none;
+}
+
+.wplImage04_pop_img {
+  width: 1200px;
+  background-color: #fff;
+  margin: 30px auto 0;
+}
+
+.wplImage04_pop img {
+  width: 100%;
+  object-fit: cover;
+}
+
+
+
 .wplImage .wplStyle {
   overflow-y: hidden;
 }
@@ -1997,7 +2026,8 @@ h3 {
   background-position: center top;
 }
 
-.wplClose {
+.wplClose,
+.yogaClose {
   position: fixed;
   top: 20px;
   right: 35px;
